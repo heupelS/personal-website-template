@@ -1,0 +1,138 @@
+{
+  "basics": {
+    "name": "Simeon Heupel",
+    "label": "Intern - Deloitte",
+    "picture": "",
+    "email": "simeon.heupel@gmail.com",
+    "phone": "",
+    "website": "",
+    "summary": "",
+    "location": {
+      "countryCode": "DE",
+      "address": ""
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "simeon-heupel",
+        "url": "https://www.linkedin.com/in/simeon-heupel/"
+      },
+      {
+          "network": "Google",
+          "username": "simeon.heupel@gmail.com",
+          "url": "mailto:simeon.heupel@gmail.com",
+          "x_icon": "fab fa-google"
+      },
+      {
+          "network": "GitHub",
+          "username": "heupelS",
+          "url": "https://github.com/heupelS",
+          "x_icon": "fab fa-github"
+      }
+    ]
+  },
+  "work": [
+    {
+      "company": "Deloitte",
+      "endDate": "",
+      "highlights": [],
+      "position": "Intern | Artificial Intelligence & Data",
+      "startDate": "2023-03-01",
+      "website": "https://www.linkedin.com/company/deloitte/"
+    },
+    {
+      "company": "growney.de",
+      "endDate": "2023-02-28",
+      "highlights": [],
+      "position": "Working Student | Data Analytics",
+      "startDate": "2021-11-30",
+      "website": "https://www.linkedin.com/company/growney/"
+    },
+    {
+      "company": "growney GmbH",
+      "endDate": "2021-11-30",
+      "highlights": [],
+      "position": "Intern | Data Analytics",
+      "startDate": "2021-06-01",
+      "website": "https://www.linkedin.com/company/growney/"
+    },
+    {
+      "company": "HALM Straws",
+      "endDate": "2020-11-30",
+      "highlights": [],
+      "position": "Intern | Marketing and CRM",
+      "startDate": "2020-07-31",
+      "summary": "Marketing und CR-Management",
+      "website": "https://www.linkedin.com/company/halmstraws/"
+    },
+    {
+      "company": "Bundesanstalt für Materialforschung und -prüfung",
+      "endDate": "2015-07-31",
+      "highlights": [],
+      "position": "Intern",
+      "startDate": "2015-06-01",
+      "website": "https://www.linkedin.com/company/bamresearch/"
+    }
+  ],
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "Freie Universität Berlin",
+      "area": "",
+      "studyType": "Master's degree - Information Systems",
+      "startDate": "2021-10-14",
+      "endDate": "2023-07-31",
+      "gpa": "",
+      "courses": []
+    },
+    {
+      "institution": "Instituto Superior Técnico",
+      "area": "",
+      "studyType": "Master of Computer Science and Engineering",
+      "startDate": "2022-09-12",
+      "endDate": "2023-02-08",
+      "gpa": "",
+      "courses": []
+    },
+    {
+      "institution": "Freie Universität Berlin",
+      "area": "",
+      "studyType": "Bachelor of Science - Business Administration",
+      "startDate": "2017-10-14",
+      "endDate": "2020-10-31",
+      "gpa": "",
+      "courses": []
+    }
+  ],
+  "awards": [],
+  "publications": [],
+  "skills": [
+    {
+      "name": "Python (Programmiersprache)",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "C++",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "R (Programming Language)",
+      "level": "",
+      "keywords": []
+    }
+  ],
+  "languages": [
+    {
+      "language": "de",
+      "fluency": "Native Speaker"
+    },
+    {
+      "language": "en",
+      "fluency": "Fluent"
+    }
+  ],
+  "interests": [],
+  "references": []
+}
