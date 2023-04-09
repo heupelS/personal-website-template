@@ -5,6 +5,12 @@
   border-radius: 4px;
 }
 
+#darkmode-button {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+}
 .alert {
   background-color: #ffc107;
   color: white;
