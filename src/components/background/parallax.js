@@ -2,60 +2,29 @@ import { useRef } from "react";
 import tree from "../../assets/tree.jpg";
 import cat from "../../assets/cat.gif";
 import HeaderBar from "../content/Appbar";
+import Box from "@mui/material/Box";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import { blue } from "@mui/material/colors";
 
 export function SlidingLayers({ children }) {
   const ref = useRef();
   return (
-    <div>
-      <Parallax pages={4} ref={ref}>
-        <ParallaxLayer style={{ zIndex: 10001 }}>
+    <div style={{ width: "100%", height: "100%" }}>
+      <Parallax pages={3} ref={ref} offset={0} speed={0}>
+        <ParallaxLayer style={{ zIndex: 10001, top: "0" }}>
           <HeaderBar></HeaderBar>
         </ParallaxLayer>
-
-        <ParallaxLayer
-          offset={1}
-          speed={1}
-          factor={2}
-          style={{
-            backgroundImage: `url(${tree})`,
-            backgroundSize: "cover",
+        <Box
+          variant="img"
+          src="/public/logo-256.png"
+          alt="logo"
+          sx={{
+            bottom: 0,
+            right: 0,
+            zIndex: 10000,
           }}
-        />
-
-        <ParallaxLayer
-          offset={2}
-          speed={1}
-          factor={4}
-          style={{
-            backgroundImage: `url(${tree})`,
-            backgroundSize: "cover",
-          }}
-        ></ParallaxLayer>
-
-        <ParallaxLayer
-          sticky={{ start: 0.9, end: 2.5 }}
-          style={{ textAlign: "center" }}
-        >
-          <img src={cat} />
-        </ParallaxLayer>
-
-        <ParallaxLayer
-          offset={0.2}
-          speed={0.05}
-          onClick={() => ref.current.scrollTo(3)}
-        >
-          <h2>Welcome to my website</h2>
-        </ParallaxLayer>
-
-        <ParallaxLayer
-          offset={3}
-          speed={2}
-          onClick={() => ref.current.scrollTo(0)}
-        >
-          <h2>Hi Mom!</h2>
-        </ParallaxLayer>
+        ></Box>
+        <Box variant="img" src="/public/logo-256.png" alt="logo"></Box>
+        <Box variant="img" src="/public/logo-256.png" alt="logo"></Box>
       </Parallax>
       {children}
     </div>

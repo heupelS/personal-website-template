@@ -9,7 +9,7 @@ import Footer from "./pages/Footer";
 function App() {
   return (
     <ToggleColorMode>
-      <CssBaseline />
+      <CssBaseline enableColorScheme />
       <Header />
       <Main></Main>
       <Footer />

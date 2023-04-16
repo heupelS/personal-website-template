@@ -1,43 +1,15 @@
-.App-header {
-  background-color: #007bff;
-  color: white;
-  padding: 8px 16px;
-  border-radius: 4px;
+html {
+	scroll-behavior: smooth; /* this will add smooth scroll feature */
+	scroll-padding-top: 80; /* this will set offset from top, value should be similar to header height*/
 }
 
 #darkmode-button {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 100;
-}
-.alert {
-  background-color: #ffc107;
-  color: white;
-  padding: 8px 16px;
-  border-radius: 4px;
+  bottom: 1vh;
+  left: 1vh;
+  z-index: 10000;
 }
 
-.link {
-  color: #6c757d;
-  text-decoration: none;
+#darkmode-button:hover{
+  background-color: blue;
 }
-.link:hover {
-  color: #007bff;
-}
-
-.form-control {
-  border: 1px solid #6c757d;
-}
-.form-control:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-}
-
-.header {
-  background-image: linear-gradient(to bottom, #007bff, #6c757d);
-  color: white;
-  padding: 8px 16px;
-}
-
-/*# sourceMappingURL=variables.css.map */
