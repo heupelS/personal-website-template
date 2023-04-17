@@ -14,7 +14,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { alpha, styled } from "@mui/material/styles";
-import logo from "../../assets/logo-1080.png";
+import logo from "../../assets/logo-2100.png";
 
 const navItems = ["About Me", "Skills", "Experience", "Interests", "Projects"];
 
