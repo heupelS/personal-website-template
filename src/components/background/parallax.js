@@ -4,27 +4,27 @@ import cat from "../../assets/cat.gif";
 import HeaderBar from "../content/Appbar";
 import Box from "@mui/material/Box";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-
+import background from "../../assets/background.jpeg";
+import { Typography } from "@mui/material";
 export function SlidingLayers({ children }) {
   const ref = useRef();
   return (
-    <div style={{ width: "100%", height: "100%" }}>
+    <div>
       <Parallax pages={3} ref={ref} offset={0} speed={0}>
         <ParallaxLayer style={{ zIndex: 10001, top: "0" }}>
           <HeaderBar></HeaderBar>
         </ParallaxLayer>
-        <Box
-          variant="img"
-          src="/public/logo-256.png"
-          alt="logo"
-          sx={{
-            bottom: 0,
-            right: 0,
-            zIndex: 10000,
+        <ParallaxLayer offset={0.2} speed={0.05}>
+          <Box>
+            <Typography variant="h1">This is the main Heading</Typography>
+          </Box>
+        </ParallaxLayer>
+        {/* <ParallaxLayer
+          style={{
+            backgroundImage: `url(${background})`,
+            backgroundSize: "cover",
           }}
-        ></Box>
-        <Box variant="img" src="/public/logo-256.png" alt="logo"></Box>
-        <Box variant="img" src="/public/logo-256.png" alt="logo"></Box>
+        /> */}
       </Parallax>
       {children}
     </div>

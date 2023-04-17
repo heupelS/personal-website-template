@@ -15,7 +15,7 @@ export const getDesignTokens = (mode) =>
               background: {
                 default: "#fff",
                 paper: "#fff",
-                gradient: `linear-gradient(to left, red, blue)`,
+                gradient: `linear-gradient(to right, #2C3A8B 0%, 10.203412073490814%, #294495 20.406824146981627%, 30.183727034120736%, #1E5DAA 39.960629921259844%, 49.86876640419948%, #0E89D0 59.7769028871391%, 70.11154855643045%, #04A3E5 80.4461942257218%, 90.2230971128609%, #01ADEE 100%);`,
               },
               text: {
                 primary: "#121212",
@@ -30,7 +30,7 @@ export const getDesignTokens = (mode) =>
               background: {
                 default: "#121212",
                 paper: "#121212",
-                gradient: `linear-gradient(90deg, rgba(0,188,212,1) 0%, rgba(0,131,143,1) 33%, rgba(156,39,176,1) 75%, rgba(234,128,252,1) 100%)`,
+                gradient: `linear-gradient(to right, #2C3A8B 0%, 10.203412073490814%, #294495 20.406824146981627%, 30.183727034120736%, #1E5DAA 39.960629921259844%, 49.86876640419948%, #0E89D0 59.7769028871391%, 70.11154855643045%, #04A3E5 80.4461942257218%, 90.2230971128609%, #01ADEE 100%);`,
               },
               text: {
                 primary: "#fff",

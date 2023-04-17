@@ -14,7 +14,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { alpha, styled } from "@mui/material/styles";
-import logo from "../../assets/logo-2100.png";
+import logo from "../../assets/logo_transparent.png";
 
 const navItems = ["About Me", "Skills", "Experience", "Interests", "Projects"];
 
@@ -32,13 +32,19 @@ export default function HeaderBar(props) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Box variant="img" sx={{ my: 2 }} src={logo} alt="logo"></Box>
+      <Box
+        component="img"
+        variant="image"
+        sx={{ my: 2, width: "10vh", height: "10vh" }}
+        src={logo}
+        alt="logo"
+      />
       <Divider />
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton>
-              <ListItemText primary={item} />
+            <ListItemButton sx={{ justifyContent: "center", minWidth: 0 }}>
+              <ListItemText primary={item} sx={{ textAlign: "center" }} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -53,6 +59,18 @@ export default function HeaderBar(props) {
     <Box sx={{ display: "flex" }}>
       <AppBar component="nav">
         <Toolbar>
+          <Box
+            component="img"
+            variant="image"
+            sx={{
+              my: 2,
+              width: "10vh",
+              height: "10vh",
+              display: { sm: "none" },
+            }}
+            src={logo}
+            alt="logo"
+          />
           <IconButton
             aria-label="open drawer"
             edge="start"
@@ -65,13 +83,15 @@ export default function HeaderBar(props) {
             component="img"
             sx={{
               display: { xs: "none", sm: "block" },
-              width: "75px",
-              height: "75px",
+              width: "10vh",
+              height: "10vh",
             }}
             src={logo}
             alt="logo"
           />
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+          <Box
+            sx={{ display: { xs: "none", sm: "block" }, marginLeft: "auto" }}
+          >
             {navItems.map((item) => (
               <Button key={item} sx={{ color: "inherit" }}>
                 {item}
