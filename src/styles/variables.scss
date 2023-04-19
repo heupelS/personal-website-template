@@ -4,44 +4,14 @@ $secondary-color: #6c757d;
 $success-color: #28a745;
 $warning-color: #ffc107;
 
-// Use the colors to style elements
-.App-header {
-  background-color: $primary-color;
-  color: white;
-  padding: 8px 16px;
-  border-radius: 4px;
+html {
+	scroll-behavior: smooth; /* this will add smooth scroll feature */
+	scroll-padding-top: 80; /* this will set offset from top, value should be similar to header height*/
 }
 
-.alert {
-  background-color: $warning-color;
-  color: white;
-  padding: 8px 16px;
-  border-radius: 4px;
-}
-
-.link {
-  color: $secondary-color;
-  text-decoration: none;
-  &:hover {
-    color: $primary-color;
-  }
-}
-
-.form-control {
-  border: 1px solid $secondary-color;
-  &:focus {
-    border-color: $primary-color;
-    box-shadow: 0 0 0 0.2rem rgba($primary-color, 0.25);
-  }
-}
-
-// Define a mixin to create a gradient background
-@mixin gradient-background($start-color, $end-color) {
-  background-image: linear-gradient(to bottom, $start-color, $end-color);
-}
-
-.header {
-  @include gradient-background($primary-color, $secondary-color);
-  color: white;
-  padding: 8px 16px;
+#darkmode-button {
+  position: fixed;
+  bottom: 1vh;
+  left: 1vh;
+  z-index: 10000;
 }

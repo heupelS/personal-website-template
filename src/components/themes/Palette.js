@@ -28,8 +28,8 @@ export const getDesignTokens = (mode) =>
               primary: cyan,
               divider: purple,
               background: {
-                default: "#121212",
-                paper: "#121212",
+                default: grey,
+                paper: grey,
                 gradient: `linear-gradient(to right, #2C3A8B 0%, 10.203412073490814%, #294495 20.406824146981627%, 30.183727034120736%, #1E5DAA 39.960629921259844%, 49.86876640419948%, #0E89D0 59.7769028871391%, 70.11154855643045%, #04A3E5 80.4461942257218%, 90.2230971128609%, #01ADEE 100%);`,
               },
               text: {
@@ -51,23 +51,22 @@ export const getDesignTokens = (mode) =>
         MuiButton: {
           styleOverrides: {
             root: ({ theme }) => ({
-              border: "solid 2px transparent",
-              borderRadius: "10px",
+              borderRadius: "14px",
               "&:hover": {
-                border: "solid 2px transparent",
-                background:
-                  "linear-gradient(canvas, canvas) padding-box, linear-gradient(red, blue) border-box",
+                background: theme.palette.background.gradient,
               },
             }),
           },
         },
         MuiIconButton: {
           styleOverrides: {
-            root: {
+            root: ({ theme }) => ({
               boxShadow:
                 "0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)",
-              transition: "all 0.5s ease",
-            },
+              "&:hover": {
+                background: theme.palette.background.gradient,
+              },
+            }),
           },
         },
         MuiToolbar: {

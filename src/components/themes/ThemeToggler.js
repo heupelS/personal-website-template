@@ -17,9 +17,12 @@ export default function ThemeToggler() {
       }
       placement="right"
       TransitionComponent={Zoom}
-      arrow
     >
-      <IconButton id="darkmode-button" onClick={toggleColorMode}>
+      <IconButton
+        id="darkmode-button"
+        className="gradient-box"
+        onClick={toggleColorMode}
+      >
         {theme.palette.mode === "dark" ? (
           <LightModeRoundedIcon />
         ) : (

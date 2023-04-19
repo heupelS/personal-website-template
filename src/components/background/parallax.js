@@ -16,7 +16,12 @@ export function SlidingLayers({ children }) {
         </ParallaxLayer>
         <ParallaxLayer offset={0.2} speed={0.05}>
           <Box>
-            <Typography variant="h1">This is the main Heading</Typography>
+            <Typography variant="h1" component="h2" gutterBottom>
+              Hi, I am Simeon
+            </Typography>
+            <Typography variant="h2">
+              an information systems student <br /> based in Berlin, Germany.
+            </Typography>
           </Box>
         </ParallaxLayer>
         {/* <ParallaxLayer

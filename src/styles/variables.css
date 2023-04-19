@@ -1,6 +1,6 @@
 html {
-	scroll-behavior: smooth; /* this will add smooth scroll feature */
-	scroll-padding-top: 80; /* this will set offset from top, value should be similar to header height*/
+  scroll-behavior: smooth; /* this will add smooth scroll feature */
+  scroll-padding-top: 80; /* this will set offset from top, value should be similar to header height*/
 }
 
 #darkmode-button {
@@ -10,6 +10,4 @@ html {
   z-index: 10000;
 }
 
-/* #darkmode-button:hover{
-  background-color: blue;
-} */
+/*# sourceMappingURL=variables.css.map */
