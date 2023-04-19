@@ -8,7 +8,13 @@ import Footer from "./pages/Footer";
 
 function App() {
   return (
-    <ToggleColorMode>
+    <ToggleColorMode
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        minHeight: "100vh",
+      }}
+    >
       <CssBaseline enableColorScheme />
       <Header />
       <Main></Main>

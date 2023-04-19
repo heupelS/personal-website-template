@@ -47,7 +47,7 @@ export const getDesignTokens = (mode) =>
       components: {
         MuiCssBaseline: {
           styleOverrides: {},
-        },
+        } /* 
         MuiButton: {
           styleOverrides: {
             root: ({ theme }) => ({
@@ -68,7 +68,7 @@ export const getDesignTokens = (mode) =>
               },
             }),
           },
-        },
+        }, */,
         MuiToolbar: {
           styleOverrides: {
             root: ({ theme }) => ({

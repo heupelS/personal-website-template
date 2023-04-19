@@ -1,11 +1,12 @@
 import { useRef } from "react";
 import tree from "../../assets/tree.jpg";
 import cat from "../../assets/cat.gif";
-import HeaderBar from "../content/Appbar";
+import HeaderBar from "../content/Headerbar";
 import Box from "@mui/material/Box";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import background from "../../assets/background.jpeg";
 import { Typography } from "@mui/material";
+
 export function SlidingLayers({ children }) {
   const ref = useRef();
   return (
@@ -17,10 +18,12 @@ export function SlidingLayers({ children }) {
         <ParallaxLayer offset={0.2} speed={0.05}>
           <Box>
             <Typography variant="h1" component="h2" gutterBottom>
-              Hi, I am Simeon
+              <p>Hi, I am Simeon</p>
             </Typography>
             <Typography variant="h2">
-              an information systems student <br /> based in Berlin, Germany.
+              <p>
+                an information systems student <br /> based in Berlin, Germany.
+              </p>
             </Typography>
           </Box>
         </ParallaxLayer>

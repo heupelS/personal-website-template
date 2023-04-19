@@ -15,7 +15,8 @@
       {
         "network": "LinkedIn",
         "username": "simeon-heupel",
-        "url": "https://www.linkedin.com/in/simeon-heupel/"
+        "url": "https://www.linkedin.com/in/simeon-heupel/",
+        "x_icon": "fab fa-linkedin"
       },
       {
           "network": "Google",

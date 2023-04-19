@@ -1,8 +1,12 @@
 import * as React from "react";
-import HeaderBar from "../components/content/Appbar";
+import HeaderBar from "../components/content/Headerbar";
 
 const Header = ({ children }) => {
-  return <></>;
+  return (
+    <>
+      <HeaderBar />
+    </>
+  );
 };
 
 export default Header;
