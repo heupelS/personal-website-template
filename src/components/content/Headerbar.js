@@ -16,15 +16,13 @@ import Button from "@mui/material/Button";
 import Zoom from "@mui/material/Zoom";
 import { alpha, styled } from "@mui/material/styles";
 import logo from "../../assets/logo_transparent.png";
+import { useTheme } from "@mui/material/styles";
 
 const navItems = ["About Me", "Skills", "Experience", "Interests", "Projects"];
 
-const CustomAppbar = styled(AppBar)(({ theme }) => ({
-  backgroundImage: theme.palette.background.gradient,
-}));
-
 export default function HeaderBar(props) {
   const { window } = props;
+  const theme = useTheme()
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -94,7 +92,11 @@ export default function HeaderBar(props) {
             sx={{ display: { xs: "none", sm: "block" }, marginLeft: "auto" }}
           >
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: "inherit" }}>
+              <Button key={item} sx={{ color: "inherit", 
+              ":hover": {backgroundImage: theme.palette.background.gradient,
+                WebkitBackgroundClip: "text",
+                backgroundClip: "text",
+                color: "transparent",} }}>
                 {item}
               </Button>
             ))}

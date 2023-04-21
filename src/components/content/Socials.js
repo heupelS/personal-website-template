@@ -16,6 +16,7 @@ export default function SocialIcons({ theme }) {
       target="_blank"
       rel="noopener noreferrer"
       underline="none"
+      color = "inherit"
     >
       <Tooltip
         title={profile.username}
@@ -29,10 +30,11 @@ export default function SocialIcons({ theme }) {
             height: "2.5rem",
             width: "2.5rem",
             marginBottom: theme.spacing(2),
-            backgroundImage: theme.palette.background.gradient,
+            color: "inherit",
+            ":hover": {backgroundImage: theme.palette.background.gradient,
             WebkitBackgroundClip: "text",
             backgroundClip: "text",
-            color: "transparent",
+            color: "transparent",}
           }}
         >
           <i
