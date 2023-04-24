@@ -22,7 +22,7 @@ const navItems = ["About Me", "Skills", "Experience", "Interests", "Projects"];
 
 export default function HeaderBar(props) {
   const { window } = props;
-  const theme = useTheme()
+  const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -30,15 +30,28 @@ export default function HeaderBar(props) {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+    <Box
+      onClick={handleDrawerToggle}
+      sx={{
+        textAlign: "center",
+        background: theme.palette.background.default,
+      }}
+    >
       <Box
         component="img"
         variant="image"
-        sx={{ my: 2, width: "10vh", height: "10vh" }}
+        sx={{
+          my: "auto",
+          width: "10vh",
+          height: "10vh",
+        }}
         src={logo}
         alt="logo"
       />
-      <Divider />
+      <Divider
+        variant="middle"
+        background={theme.palette.background.gradient}
+      />
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
@@ -62,7 +75,7 @@ export default function HeaderBar(props) {
             component="img"
             variant="image"
             sx={{
-              my: 2,
+              my: "auto",
               width: "10vh",
               height: "10vh",
               display: { sm: "none" },
@@ -92,11 +105,18 @@ export default function HeaderBar(props) {
             sx={{ display: { xs: "none", sm: "block" }, marginLeft: "auto" }}
           >
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: "inherit", 
-              ":hover": {backgroundImage: theme.palette.background.gradient,
-                WebkitBackgroundClip: "text",
-                backgroundClip: "text",
-                color: "transparent",} }}>
+              <Button
+                key={item}
+                sx={{
+                  color: "inherit",
+                  ":hover": {
+                    backgroundImage: theme.palette.background.gradient,
+                    WebkitBackgroundClip: "text",
+                    backgroundClip: "text",
+                    color: "transparent",
+                  },
+                }}
+              >
                 {item}
               </Button>
             ))}
@@ -117,6 +137,7 @@ export default function HeaderBar(props) {
             display: { xs: "block", sm: "none" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
+              opacity: 1,
             },
           }}
         >

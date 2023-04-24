@@ -1,5 +1,9 @@
 import * as React from "react";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import {
+  ThemeProvider,
+  createTheme,
+  responsiveFontSizes,
+} from "@mui/material/styles";
 import { getDesignTokens } from "./Palette";
 
 export const ColorModeContext = React.createContext({
@@ -17,7 +21,9 @@ export function ToggleColorMode({ children }) {
     []
   );
 
-  const theme = React.useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
+  const theme = React.useMemo(() =>
+    responsiveFontSizes(createTheme(getDesignTokens(mode)), [mode])
+  );
 
   return (
     <ColorModeContext.Provider value={colorMode}>

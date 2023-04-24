@@ -3,8 +3,6 @@ import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
 import Zoom from "@mui/material/Zoom";
 import { useTheme } from "@mui/material/styles";
-import LightModeRoundedIcon from "@mui/icons-material/LightModeRounded";
-import DarkModeIcon from "@mui/icons-material/DarkMode";
 import { ColorModeContext } from "./ThemeProvider";
 
 export default function ThemeToggler() {
@@ -20,13 +18,16 @@ export default function ThemeToggler() {
     >
       <IconButton
         id="darkmode-button"
-        className="gradient-box"
         onClick={toggleColorMode}
+        sx={{
+          boxShadow:
+            "0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)",
+        }}
       >
         {theme.palette.mode === "dark" ? (
-          <LightModeRoundedIcon />
+          <i class="material-icons-outlined">dark_mode</i>
         ) : (
-          <DarkModeIcon />
+          <i class="material-icons-outlined">light_mode</i>
         )}
       </IconButton>
     </Tooltip>

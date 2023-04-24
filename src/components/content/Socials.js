@@ -16,7 +16,7 @@ export default function SocialIcons({ theme }) {
       target="_blank"
       rel="noopener noreferrer"
       underline="none"
-      color = "inherit"
+      color="inherit"
     >
       <Tooltip
         title={profile.username}
@@ -27,14 +27,15 @@ export default function SocialIcons({ theme }) {
         <IconButton
           aria-label={profile.network}
           sx={{
-            height: "2.5rem",
-            width: "2.5rem",
             marginBottom: theme.spacing(2),
-            color: "inherit",
-            ":hover": {backgroundImage: theme.palette.background.gradient,
-            WebkitBackgroundClip: "text",
-            backgroundClip: "text",
-            color: "transparent",}
+            backgroundColor: "transparent",
+            boxShadow:
+              "0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)",
+            ":hover": {
+              backgroundImage: theme.palette.background.gradient,
+              WebkitBackgroundClip: "text",
+              backgroundClip: "text",
+            },
           }}
         >
           <i
