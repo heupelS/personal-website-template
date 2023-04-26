@@ -6,6 +6,7 @@ export default function Content(theme) {
   theme = useTheme();
   return (
     <Container
+      id="about-me"
       maxWidth="xs"
       sx={{
         width: "50%",

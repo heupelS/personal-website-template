@@ -1,5 +1,4 @@
 import * as React from "react";
-import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
@@ -11,14 +10,24 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import Zoom from "@mui/material/Zoom";
-import { alpha, styled } from "@mui/material/styles";
 import logo from "../../assets/logo_transparent.png";
 import { useTheme } from "@mui/material/styles";
+import Link from "@mui/material/Link";
 
-const navItems = ["About Me", "Skills", "Experience", "Interests", "Projects"];
+const navItems = [
+  { id: "about-me", name: "About Me" },
+  { id: "experience", name: "Experience" },
+];
+
+// future nav items
+/* const navItems = [
+  { id: "about-me", name: "About Me" },
+  { id: "skills", name: "Skills" },
+  { id: "experience", name: "Experience" },
+  { id: "interests", name: "Interests" },
+  { id: "projects", name: "Projects" },
+]; */
 
 export default function HeaderBar(props) {
   const { window } = props;
@@ -54,9 +63,9 @@ export default function HeaderBar(props) {
       />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
+          <ListItem key={item.id} disablePadding>
             <ListItemButton sx={{ justifyContent: "center", minWidth: 0 }}>
-              <ListItemText primary={item} sx={{ textAlign: "center" }} />
+              <ListItemText primary={item.name} sx={{ textAlign: "center" }} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -105,20 +114,25 @@ export default function HeaderBar(props) {
             sx={{ display: { xs: "none", sm: "block" }, marginLeft: "auto" }}
           >
             {navItems.map((item) => (
-              <Button
-                key={item}
-                sx={{
-                  color: "inherit",
-                  ":hover": {
-                    backgroundImage: theme.palette.background.gradient,
-                    WebkitBackgroundClip: "text",
-                    backgroundClip: "text",
-                    color: "transparent",
-                  },
-                }}
+              <Link
+                href={`#${item.id}`}
+                sx={{ color: "inherit" }}
+                key={item.id}
               >
-                {item}
-              </Button>
+                <Button
+                  sx={{
+                    color: "inherit",
+                    ":hover": {
+                      backgroundImage: theme.palette.background.gradient,
+                      WebkitBackgroundClip: "text",
+                      backgroundClip: "text",
+                      color: "transparent",
+                    },
+                  }}
+                >
+                  {item.name}
+                </Button>
+              </Link>
             ))}
           </Box>
         </Toolbar>
