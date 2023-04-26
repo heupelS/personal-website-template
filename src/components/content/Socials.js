@@ -51,9 +51,9 @@ export default function SocialIcons({ theme }) {
   return (
     <Box
       sx={{
-        position: "absolute",
+        position: "fixed",
         top: "50%",
-        right: 0,
+        right: theme.spacing(2),
         transform: "translateY(-50%)",
         display: "flex",
         flexDirection: "column",
