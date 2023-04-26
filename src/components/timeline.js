@@ -21,20 +21,17 @@ export default function CustomizedTimeline() {
           variant="body2"
           color="text.secondary"
         >
-          {workitem.startDate}
+          {workitem.startDate.slice(0, 7)}
         </TimelineOppositeContent>
         <TimelineSeparator>
           <TimelineConnector />
-          <TimelineDot>
-            <FastfoodIcon />
-          </TimelineDot>
+          <TimelineDot></TimelineDot>
           <TimelineConnector />
         </TimelineSeparator>
-        <TimelineContent sx={{ py: "12px", px: 2 }}>
+        <TimelineContent sx={{ py: "12px", width: "10vh" }}>
           <Typography variant="h6" component="span">
             {workitem.company}
           </Typography>
-          <Typography>Because you need strength</Typography>
         </TimelineContent>
       </TimelineItem>
     );
