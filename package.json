@@ -8,6 +8,7 @@
     "@fortawesome/fontawesome-free": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@mui/icons-material": "^5.11.16",
+    "@mui/lab": "^5.0.0-alpha.128",
     "@mui/material": "^5.11.16",
     "@react-spring/parallax": "^9.7.2",
     "@react-spring/web": "^9.7.2",
