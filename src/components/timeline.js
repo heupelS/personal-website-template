@@ -32,6 +32,7 @@ export default function CustomizedTimeline() {
           <Typography variant="h6" component="span">
             {workitem.company}
           </Typography>
+          <Typography>{workitem.position}</Typography>
         </TimelineContent>
       </TimelineItem>
     );
