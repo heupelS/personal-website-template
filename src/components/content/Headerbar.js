@@ -63,10 +63,28 @@ export default function HeaderBar(props) {
       />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item.id} disablePadding>
-            <ListItemButton sx={{ justifyContent: "center", minWidth: 0 }}>
-              <ListItemText primary={item.name} sx={{ textAlign: "center" }} />
-            </ListItemButton>
+          <ListItem
+            key={item.id}
+            disablePadding
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <Link
+              href={`#${item.id}`}
+              sx={{ color: "inherit" }}
+              key={item.id}
+              underline="none"
+            >
+              <ListItemButton sx={{ justifyContent: "center", minWidth: 0 }}>
+                <ListItemText
+                  primary={item.name}
+                  sx={{ textAlign: "center" }}
+                />
+              </ListItemButton>
+            </Link>
           </ListItem>
         ))}
       </List>
@@ -119,19 +137,7 @@ export default function HeaderBar(props) {
                 sx={{ color: "inherit" }}
                 key={item.id}
               >
-                <Button
-                  sx={{
-                    color: "inherit",
-                    ":hover": {
-                      backgroundImage: theme.palette.background.gradient,
-                      WebkitBackgroundClip: "text",
-                      backgroundClip: "text",
-                      color: "transparent",
-                    },
-                  }}
-                >
-                  {item.name}
-                </Button>
+                <Button>{item.name}</Button>
               </Link>
             ))}
           </Box>

@@ -34,7 +34,7 @@ export const getDesignTokens = (mode) =>
                 primary: "#fff",
                 secondary: grey[500],
               },
-              action: { hover: "none", hoverOpacity: 0 },
+              action: { hover: "none", hoverOpacity: 0, click: "none" },
             }),
       },
     },
@@ -65,11 +65,42 @@ export const getDesignTokens = (mode) =>
             disableRipple: true, // No more ripple, on the whole application 💣!
           },
         },
-        MuiIconButton: {
+        MuiButton: {
           styleOverrides: {
             root: ({ theme }) => ({
               color: "inherit",
-              backgroundColor: "inherit",
+              ":hover": {
+                backgroundImage: theme.palette.background.gradient,
+                WebkitBackgroundClip: "text",
+                backgroundClip: "text",
+                color: "transparent",
+              },
+            }),
+          },
+        },
+        MuiListItemButton: {
+          styleOverrides: {
+            root: ({ theme }) => ({
+              marginBottom: theme.spacing(2),
+              backgroundColor: "transparent",
+              background: "inherit",
+              ":hover": {
+                backgroundImage: theme.palette.background.gradient,
+                WebkitBackgroundClip: "text",
+                backgroundClip: "text",
+                color: "transparent",
+              },
+            }),
+          },
+        },
+        MuiIconButton: {
+          styleOverrides: {
+            root: ({ theme }) => ({
+              marginBottom: theme.spacing(2),
+              backgroundColor: "transparent",
+              boxShadow:
+                "0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)",
+              color: "inherit",
               background: "inherit",
               ":hover": {
                 backgroundImage: theme.palette.background.gradient,

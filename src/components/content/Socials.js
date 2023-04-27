@@ -24,20 +24,7 @@ export default function SocialIcons({ theme }) {
         TransitionComponent={Zoom}
         color="inherit"
       >
-        <IconButton
-          aria-label={profile.network}
-          sx={{
-            marginBottom: theme.spacing(2),
-            backgroundColor: "transparent",
-            boxShadow:
-              "0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)",
-            ":hover": {
-              backgroundImage: theme.palette.background.gradient,
-              WebkitBackgroundClip: "text",
-              backgroundClip: "text",
-            },
-          }}
-        >
+        <IconButton aria-label={profile.network}>
           <i
             className={`${profile.x_icon}`}
             sx={{
@@ -57,6 +44,7 @@ export default function SocialIcons({ theme }) {
         transform: "translateY(-50%)",
         display: "flex",
         flexDirection: "column",
+        zIndex: 10000,
       }}
     >
       {Icons}
