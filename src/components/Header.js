@@ -11,7 +11,7 @@ import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
-import logo from "../../assets/logo_transparent.png";
+import logo from "../assets/logo_transparent.png";
 import { useTheme } from "@mui/material/styles";
 import Link from "@mui/material/Link";
 
@@ -29,7 +29,7 @@ const navItems = [
   { id: "projects", name: "Projects" },
 ]; */
 
-export default function HeaderBar(props) {
+export default function Header(props) {
   const { window } = props;
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);

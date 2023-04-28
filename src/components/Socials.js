@@ -3,7 +3,7 @@ import Tooltip from "@mui/material/Tooltip";
 import Zoom from "@mui/material/Zoom";
 import IconButton from "@mui/material/IconButton";
 import { useTheme } from "@mui/material/styles";
-import Resume from "../../assets/resume.json";
+import Resume from "../assets/resume.json";
 import Box from "@mui/material/Box";
 
 export default function SocialIcons({ theme }) {
@@ -24,7 +24,13 @@ export default function SocialIcons({ theme }) {
         TransitionComponent={Zoom}
         color="inherit"
       >
-        <IconButton aria-label={profile.network}>
+        <IconButton
+          aria-label={profile.network}
+          sx={{
+            width: "4vh",
+            height: "4vh",
+          }}
+        >
           <i
             className={`${profile.x_icon}`}
             sx={{

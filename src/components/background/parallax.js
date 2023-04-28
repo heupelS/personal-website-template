@@ -1,10 +1,7 @@
 import { useRef } from "react";
-import tree from "../../assets/tree.jpg";
-import cat from "../../assets/cat.gif";
-import HeaderBar from "../content/Headerbar";
+import Header from "../Header";
 import Box from "@mui/material/Box";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import background from "../../assets/background.jpeg";
 import { Typography } from "@mui/material";
 
 export function SlidingLayers({ children }) {
@@ -13,7 +10,7 @@ export function SlidingLayers({ children }) {
     <div>
       <Parallax pages={3} ref={ref} offset={0} speed={0}>
         <ParallaxLayer style={{ zIndex: 10001, top: "0" }}>
-          <HeaderBar></HeaderBar>
+          <Header></Header>
         </ParallaxLayer>
         <ParallaxLayer offset={0.2} speed={0.05}>
           <Box>

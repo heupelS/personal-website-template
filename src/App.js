@@ -2,22 +2,16 @@ import * as React from "react";
 import CssBaseline from "@mui/material/CssBaseline";
 import "./styles/variables.css";
 import { ToggleColorMode } from "./components/themes/ThemeProvider";
-import Header from "./pages/Header";
-import Main from "./pages/Main";
+import Header from "./components/Header.js";
 import Footer from "./pages/Footer";
+import AppRouter from "./AppRouter";
 
 function App() {
   return (
-    <ToggleColorMode
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        minHeight: "100vh",
-      }}
-    >
+    <ToggleColorMode>
       <CssBaseline enableColorScheme />
       <Header />
-      <Main></Main>
+      <AppRouter></AppRouter>
       <Footer />
     </ToggleColorMode>
   );
