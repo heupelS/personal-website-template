@@ -27,8 +27,8 @@ export default function SocialIcons({ theme }) {
         <IconButton
           aria-label={profile.network}
           sx={{
-            width: "4vh",
-            height: "4vh",
+            width: "40px",
+            height: "40px",
           }}
         >
           <i
