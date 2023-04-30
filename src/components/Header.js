@@ -13,11 +13,12 @@ import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
 import logo from "../assets/logo_transparent.png";
 import { useTheme } from "@mui/material/styles";
-import Link from "@mui/material/Link";
+import { Outlet, Link } from "react-router-dom";
+import ThemeToggler from "../components/themes/ThemeToggler";
 
 const navItems = [
-  { id: "about-me", name: "About Me" },
-  { id: "experience", name: "Experience" },
+  { id: "", name: "Home" },
+  { id: "Experience", name: "Experience" },
 ];
 
 // future nav items
@@ -46,17 +47,19 @@ export default function Header(props) {
         background: theme.palette.background.default,
       }}
     >
-      <Box
-        component="img"
-        variant="image"
-        sx={{
-          my: "auto",
-          width: "10vh",
-          height: "10vh",
-        }}
-        src={logo}
-        alt="logo"
-      />
+      <Link to="">
+        <Box
+          component="img"
+          variant="image"
+          sx={{
+            my: "auto",
+            width: "10vh",
+            height: "10vh",
+          }}
+          src={logo}
+          alt="logo"
+        />
+      </Link>
       <Divider
         variant="middle"
         background={theme.palette.background.gradient}
@@ -73,15 +76,26 @@ export default function Header(props) {
             }}
           >
             <Link
-              href={`#${item.id}`}
-              sx={{ color: "inherit" }}
+              to={item.id}
+              style={{
+                textDecoration: "none",
+                underline: "none",
+              }}
               key={item.id}
-              underline="none"
             >
-              <ListItemButton sx={{ justifyContent: "center", minWidth: 0 }}>
+              <ListItemButton
+                sx={{
+                  justifyContent: "center",
+                  minWidth: 0,
+                  textDecoration: "none",
+                  underline: "none",
+                }}
+              >
                 <ListItemText
                   primary={item.name}
-                  sx={{ textAlign: "center" }}
+                  sx={{
+                    textAlign: "center",
+                  }}
                 />
               </ListItemButton>
             </Link>
@@ -98,18 +112,20 @@ export default function Header(props) {
     <Box sx={{ display: "flex" }}>
       <AppBar component="nav">
         <Toolbar>
-          <Box
-            component="img"
-            variant="image"
-            sx={{
-              my: "auto",
-              width: "10vh",
-              height: "10vh",
-              display: { sm: "none" },
-            }}
-            src={logo}
-            alt="logo"
-          />
+          <Link to="">
+            <Box
+              component="img"
+              variant="image"
+              sx={{
+                my: "auto",
+                width: "10vh",
+                height: "10vh",
+                display: { sm: "none" },
+              }}
+              src={logo}
+              alt="logo"
+            />
+          </Link>
           <IconButton
             aria-label="open drawer"
             edge="start"
@@ -118,26 +134,30 @@ export default function Header(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Box
-            component="img"
-            sx={{
-              display: { xs: "none", sm: "block" },
-              width: "10vh",
-              height: "10vh",
-            }}
-            src={logo}
-            alt="logo"
-          />
+          <Link to="">
+            <Box
+              component="img"
+              sx={{
+                display: { xs: "none", sm: "block" },
+                width: "10vh",
+                height: "10vh",
+              }}
+              src={logo}
+              alt="logo"
+            />
+          </Link>
           <Box
             sx={{ display: { xs: "none", sm: "block" }, marginLeft: "auto" }}
           >
             {navItems.map((item) => (
-              <Link
-                href={`#${item.id}`}
-                sx={{ color: "inherit" }}
-                key={item.id}
-              >
-                <Button>{item.name}</Button>
+              <Link to={item.id} key={item.id}>
+                <Button
+                  style={{
+                    textDecoration: "none",
+                  }}
+                >
+                  {item.name}
+                </Button>
               </Link>
             ))}
           </Box>
@@ -164,6 +184,7 @@ export default function Header(props) {
           {drawer}
         </Drawer>
       </Box>
+      <Outlet />
     </Box>
   );
 }

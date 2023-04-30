@@ -68,7 +68,7 @@ export const getDesignTokens = (mode) =>
         MuiButton: {
           styleOverrides: {
             root: ({ theme }) => ({
-              color: "inherit",
+              color: theme.palette.text.primary,
               ":hover": {
                 backgroundImage: theme.palette.background.gradient,
                 WebkitBackgroundClip: "text",
@@ -82,6 +82,7 @@ export const getDesignTokens = (mode) =>
           styleOverrides: {
             root: ({ theme }) => ({
               marginBottom: theme.spacing(2),
+              color: theme.palette.text.primary,
               backgroundColor: "transparent",
               background: "inherit",
               ":hover": {

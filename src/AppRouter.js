@@ -1,14 +1,18 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import AboutPage from "./pages/About";
-import ContactPage from "./pages/Contact";
+import Experience from "./pages/Experience";
+import Interface from "./pages/Interface";
 
 function AppRouter() {
   return (
     <Router>
       <Routes>
-        <Route exact path="/" component={<Home />} />
+        <Route path="/" element={<Interface />}>
+          <Route index element={<Home />} />
+          <Route path="/Experience" element={<Experience />} />
+          {/* <Route path="*" element={<NoPage />} /> */}
+        </Route>
         {/*         <Route path="/about" component={AboutPage} />
         <Route path="/contact" component={ContactPage} /> */}
       </Routes>
