@@ -6,8 +6,8 @@ html {
 
 #darkmode-button {
   position: fixed;
-  bottom: 2vh;
-  left: 2vh;
+  bottom: 1vh;
+  left: 3vh;
   z-index: 10000;
 }
 
