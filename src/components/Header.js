@@ -14,7 +14,6 @@ import Button from "@mui/material/Button";
 import logo from "../assets/logo_transparent.png";
 import { useTheme } from "@mui/material/styles";
 import { Outlet, Link } from "react-router-dom";
-import ThemeToggler from "../components/themes/ThemeToggler";
 
 const navItems = [
   { id: "", name: "Home" },
