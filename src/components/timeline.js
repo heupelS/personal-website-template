@@ -14,10 +14,12 @@ import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Divider from "@mui/material/Divider";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import { ThemeContext } from "@emotion/react";
+import { useTheme } from "@mui/material/styles";
 
-export default function CustomizedTimeline() {
+export default function CustomizedTimeline({ theme }) {
+  theme = useTheme();
   const isMobile = useMediaQuery("(max-width:600px)");
+  const [hoveredIndex, setHoveredIndex] = React.useState(null);
 
   const TimelineWorkItemsWeb = Resume.work.map((workitem, index) => {
     const isFirstItem = index === 0;
@@ -49,13 +51,30 @@ export default function CustomizedTimeline() {
           ) : (
             <TimelineConnector />
           )}
-          <TimelineDot variant="outlined" color="primary">
-            <i class={workitem.icon} style={{ color: "inherit" }}></i>
+          <TimelineDot
+            variant="outlined"
+            sx={
+              hoveredIndex === index
+                ? {
+                    position: "relative",
+                    backgroundImage: theme.palette.background.gradient,
+                    WebkitBackgroundClip: "text",
+                    backgroundClip: "text",
+                    color: "red",
+                  }
+                : {}
+            }
+          >
+            <i class={workitem.icon}></i>
           </TimelineDot>
           <TimelineConnector />
         </TimelineSeparator>
         <TimelineContent>
-          <Paper sx={{ mx: 2, mt: 2, mb: 2, textAlign: "left" }}>
+          <Paper
+            sx={{ mx: 2, mt: 2, mb: 2, textAlign: "left" }}
+            onMouseEnter={() => setHoveredIndex(index)}
+            onMouseLeave={() => setHoveredIndex(null)}
+          >
             <Box sx={{ marginLeft: "1vw" }}>
               <Typography
                 variant="h6"
