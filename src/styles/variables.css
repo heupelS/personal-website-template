@@ -11,6 +11,13 @@ html {
   z-index: 10000;
 }
 
+@media (max-width: 767px) {
+  #darkmode-button {
+    left: auto;
+    right: 3vh;
+  }
+}
+
 .material-icons, .material-icons-outlined {
   font-family: 'Material Icons';
   font-weight: normal;
