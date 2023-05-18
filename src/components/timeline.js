@@ -23,7 +23,6 @@ export default function CustomizedTimeline({ theme }) {
 
   const TimelineWorkItemsWeb = Resume.work.map((workitem, index) => {
     const isFirstItem = index === 0;
-    const isLastItem = index === Resume.work.length - 1;
 
     return (
       <TimelineItem key={workitem.company}>
@@ -112,68 +111,75 @@ export default function CustomizedTimeline({ theme }) {
   });
 
   const TimelineWorkItemsMobile = Resume.work.map((workitem, index) => {
-    const isFirstItem = index === 0;
-    const isLastItem = index === Resume.work.length - 1;
+  const isFirstItem = index === 0;
 
-    return (
-      <TimelineItem key={workitem.company}>
-        <TimelineSeparator>
-          {isFirstItem ? (
-            <TimelineConnector style={{ position: "relative" }}>
-              <ArrowForwardIosIcon
-                style={{
-                  color: "inherit",
-                  position: "absolute",
-                  right: "40%",
-                  top: "5%",
-                  transform: "translate(50%, -50%) rotate(-90deg)",
-                }}
-              />
-            </TimelineConnector>
-          ) : (
-            <TimelineConnector />
-          )}
-          <TimelineDot variant="outlined" color="primary">
-            <i class={workitem.icon} style={{ color: "inherit" }}></i>
-          </TimelineDot>
+  return (
+    <TimelineItem key={workitem.company}>
+      <TimelineSeparator>
+        {isFirstItem ? (
+          <TimelineConnector style={{ position: "relative" }}>
+            <ArrowForwardIosIcon
+              style={{
+                color: "inherit",
+                position: "absolute",
+                right: "40%",
+                top: "5%",
+                transform: "translate(50%, -50%) rotate(-90deg)",
+              }}
+            />
+          </TimelineConnector>
+        ) : (
           <TimelineConnector />
-        </TimelineSeparator>
-        <Paper sx={{ mx: 2, mt: 2, mb: 2 }}>
-          <TimelineContent>
-            <Typography
-              variant="h6"
-              component="span"
-              sx={{
-                fontSize: {
-                  xs: "1rem",
-                  sm: "1.2rem",
-                  md: "1.5rem",
-                  lg: "2rem",
-                },
-              }}
-            >
-              {workitem.company}
-            </Typography>
-            <Typography>{workitem.position}</Typography>
-            <Typography
-              variant="body2"
-              color="text.secondary"
-              sx={{
-                fontSize: {
-                  xs: "1rem",
-                  sm: "1.2rem",
-                  md: "1.5rem",
-                  lg: "2rem",
-                },
-              }}
-            >
-              {workitem.startDate.slice(0, 7)}
-            </Typography>
-          </TimelineContent>
-        </Paper>
-      </TimelineItem>
-    );
-  });
+        )}
+        <TimelineDot
+          variant="outlined"
+          sx={{
+            backgroundImage: theme.palette.background.gradient,
+                    WebkitBackgroundClip: "text",
+                    backgroundClip: "text",
+                    color: "transparent",
+          }}
+        >
+          <i class={workitem.icon} style={{ color: "inherit" }}></i>
+        </TimelineDot>
+        <TimelineConnector />
+      </TimelineSeparator>
+      <Paper sx={{ mx: 2, mt: 2, mb: 2, mr: 6 }}>
+        <TimelineContent>
+          <Typography
+            variant="h6"
+            component="span"
+            sx={{
+              fontSize: {
+                xs: "1rem",
+                sm: "1.2rem",
+                md: "1.5rem",
+                lg: "2rem",
+              },
+            }}
+          >
+            {workitem.company}
+          </Typography>
+          <Typography>{workitem.position}</Typography>
+          <Typography
+            variant="body2"
+            color="text.secondary"
+            sx={{
+              fontSize: {
+                xs: "1rem",
+                sm: "1.2rem",
+                md: "1.5rem",
+                lg: "2rem",
+              },
+            }}
+          >
+            {workitem.startDate.slice(0, 7)}
+          </Typography>
+        </TimelineContent>
+      </Paper>
+    </TimelineItem>
+  );
+});
 
   return (
     <Box sx={{ mx: "auto", mt: 14 }}>
