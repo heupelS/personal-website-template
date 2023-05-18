@@ -39,23 +39,26 @@
       "highlights": [],
       "position": "Intern | Artificial Intelligence & Data",
       "startDate": "2023-03-01",
-      "website": "https://www.linkedin.com/company/deloitte/"
+      "website": "https://www.linkedin.com/company/deloitte/",
+      "icon": "fas fa-briefcase"
     },
     {
-      "company": "growney GmbH",
+      "company": "growney",
       "endDate": "2023-02-28",
       "highlights": [],
       "position": "Working Student | Data Analytics",
       "startDate": "2021-11-30",
-      "website": "https://www.linkedin.com/company/growney/"
+      "website": "https://www.linkedin.com/company/growney/",
+      "icon": "fas fa-briefcase"
     },
     {
-      "company": "growney GmbH",
+      "company": "growney",
       "endDate": "2021-11-30",
       "highlights": [],
       "position": "Intern | Data Analytics",
       "startDate": "2021-06-01",
-      "website": "https://www.linkedin.com/company/growney/"
+      "website": "https://www.linkedin.com/company/growney/",
+      "icon": "fas fa-briefcase"
     },
     {
       "company": "HALM Straws",
@@ -64,15 +67,8 @@
       "position": "Intern | Marketing and CRM",
       "startDate": "2020-07-31",
       "summary": "Marketing und CR-Management",
-      "website": "https://www.linkedin.com/company/halmstraws/"
-    },
-    {
-      "company": "Bundesanstalt für Materialforschung und -prüfung",
-      "endDate": "2015-07-31",
-      "highlights": [],
-      "position": "Intern",
-      "startDate": "2015-06-01",
-      "website": "https://www.linkedin.com/company/bamresearch/"
+      "website": "https://www.linkedin.com/company/halmstraws/",
+      "icon": "fas fa-briefcase"
     }
   ],
   "volunteer": [],

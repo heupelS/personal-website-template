@@ -124,14 +124,16 @@ export const getDesignTokens = (mode) =>
         },
         MuiDivider: {
           styleOverrides: {
-            root: ({ theme }) => ({ color: "red" }),
+            root: ({ theme }) => ({ backgroundImage: theme.palette.background.gradient }),
           },
         },
         MuiTooltip: {
           styleOverrides: {
-            tooltip: ({ theme }) => ({
-              color: theme.palette.text.primary,
-              background: theme.palette.background.gradient,
+            tooltip: ({ theme }) => ({              
+              backgroundImage: theme.palette.background.gradient,
+              WebkitBackgroundClip: "text",
+              backgroundClip: "text",
+              color: "transparent",
             }),
           },
         },
