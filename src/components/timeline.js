@@ -56,11 +56,10 @@ export default function CustomizedTimeline({ theme }) {
             sx={
               hoveredIndex === index
                 ? {
-                    position: "relative",
                     backgroundImage: theme.palette.background.gradient,
                     WebkitBackgroundClip: "text",
                     backgroundClip: "text",
-                    color: "red",
+                    color: "transparent",
                   }
                 : {}
             }
