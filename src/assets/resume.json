@@ -40,7 +40,8 @@
       "position": "Intern | Artificial Intelligence & Data",
       "startDate": "2023-03-01",
       "website": "https://www.linkedin.com/company/deloitte/",
-      "icon": "fas fa-briefcase"
+      "icon": "fas fa-briefcase",
+      "tags": ["Python", "R", "SQL", "Git", "Microsoft Office"]
     },
     {
       "company": "growney",
@@ -49,7 +50,8 @@
       "position": "Working Student | Data Analytics",
       "startDate": "2021-11-30",
       "website": "https://www.linkedin.com/company/growney/",
-      "icon": "fas fa-briefcase"
+      "icon": "fas fa-briefcase",
+      "tags": ["Python", "R", "SQL", "Git", "Microsoft Office"]
     },
     {
       "company": "growney",
@@ -58,7 +60,8 @@
       "position": "Intern | Data Analytics",
       "startDate": "2021-06-01",
       "website": "https://www.linkedin.com/company/growney/",
-      "icon": "fas fa-briefcase"
+      "icon": "fas fa-briefcase",
+      "tags": ["Python", "R", "SQL", "Git", "Microsoft Office"]
     },
     {
       "company": "HALM Straws",
@@ -68,7 +71,8 @@
       "startDate": "2020-07-31",
       "summary": "Marketing und CR-Management",
       "website": "https://www.linkedin.com/company/halmstraws/",
-      "icon": "fas fa-briefcase"
+      "icon": "fas fa-briefcase",
+      "tags": ["Python", "R", "SQL", "Git", "Microsoft Office"]
     }
   ],
   "volunteer": [],

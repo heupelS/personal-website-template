@@ -43,7 +43,7 @@ export default function Header(props) {
       onClick={handleDrawerToggle}
       sx={{
         textAlign: "center",
-        background: theme.palette.background.default,
+        background: theme.palette.background.paper,
       }}
     >
       <Link to="">
@@ -79,22 +79,18 @@ export default function Header(props) {
               style={{
                 textDecoration: "none",
                 underline: "none",
+                justifyContent: "center",
+                minWidth: 0,
+                textDecoration: "none",
+                underline: "none",
+                textAlign: "center",
               }}
               key={item.id}
             >
               <ListItemButton
-                sx={{
-                  justifyContent: "center",
-                  minWidth: 0,
-                  textDecoration: "none",
-                  underline: "none",
-                }}
               >
                 <ListItemText
                   primary={item.name}
-                  sx={{
-                    textAlign: "center",
-                  }}
                 />
               </ListItemButton>
             </Link>
@@ -108,8 +104,8 @@ export default function Header(props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex" }}>
-      <AppBar component="nav">
+    <Box sx={{ display: "flex" ,background: theme.palette.background.paper,}}>
+      <AppBar component="nav" sx={{ background: theme.palette.background.paper,}}>
         <Toolbar>
           <Link to="">
             <Box
@@ -129,7 +125,8 @@ export default function Header(props) {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ marginLeft: "auto", mr: 2, display: { sm: "none" } }}
+            sx={{ marginLeft: "auto", mr: 2, display: { sm: "none" },
+            textDecoration: "none", }}
           >
             <MenuIcon />
           </IconButton>
@@ -140,6 +137,7 @@ export default function Header(props) {
                 display: { xs: "none", sm: "block" },
                 width: "10vh",
                 height: "10vh",
+                textDecoration: "none",
               }}
               src={logo}
               alt="logo"
@@ -149,11 +147,11 @@ export default function Header(props) {
             sx={{ display: { xs: "none", sm: "block" }, marginLeft: "auto" }}
           >
             {navItems.map((item) => (
-              <Link to={item.id} key={item.id}>
+              <Link to={item.id} key={item.id}
+              style={{
+                textDecoration: "none",
+              }}>
                 <Button
-                  style={{
-                    textDecoration: "none",
-                  }}
                 >
                   {item.name}
                 </Button>

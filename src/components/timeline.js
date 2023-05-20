@@ -15,6 +15,8 @@ import Paper from "@mui/material/Paper";
 import Divider from "@mui/material/Divider";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { useTheme } from "@mui/material/styles";
+import Chip from '@mui/material/Chip';
+import MyGradientChip from "./GradientChip";
 
 export default function CustomizedTimeline({ theme }) {
   theme = useTheme();
@@ -68,43 +70,63 @@ export default function CustomizedTimeline({ theme }) {
           <TimelineConnector />
         </TimelineSeparator>
         <TimelineContent>
-          <Paper
-            sx={{ mx: 2, mt: 2, mb: 2, textAlign: "left" }}
-            onMouseEnter={() => setHoveredIndex(index)}
-            onMouseLeave={() => setHoveredIndex(null)}
-          >
-            <Box sx={{ marginLeft: "1vw" }}>
-              <Typography
-                variant="h6"
-                component="span"
-                sx={{
-                  fontSize: {
-                    xs: "1rem",
-                    sm: "1.2rem",
-                    md: "1.5rem",
-                    lg: "2rem",
-                  },
-                }}
-              >
-                {workitem.company}
-              </Typography>
-              <Typography>{workitem.position}</Typography>
-              <Typography
-                variant="body2"
-                color="text.secondary"
-                sx={{
-                  fontSize: {
-                    xs: "1rem",
-                    sm: "1.2rem",
-                    md: "1.5rem",
-                    lg: "2rem",
-                  },
-                }}
-              >
-                {workitem.startDate.slice(0, 7)}
-              </Typography>
-            </Box>
-          </Paper>
+        <Paper
+  sx={{ mx: 2, mt: 2, mb: 2, textAlign: "left", background: theme.palette.background.infobox}}
+  variant = "outlined"
+  onMouseEnter={() => setHoveredIndex(index)}
+  onMouseLeave={() => setHoveredIndex(null)}
+>
+  <Box sx={{ marginLeft: "1vw" }}>
+    <Typography
+      variant="h6"
+      component="span"
+      sx={{
+        fontSize: {
+          xs: "1rem",
+          sm: "1.2rem",
+          md: "1.5rem",
+          lg: "2rem",
+        },
+      }}
+    >
+      {workitem.company}
+    </Typography>
+    <Typography>{workitem.position}</Typography>
+    <Typography
+      variant="body2"
+      color="text.secondary"
+      sx={{
+        fontSize: {
+          xs: "1rem",
+          sm: "1.2rem",
+          md: "1.5rem",
+          lg: "2rem",
+        },
+      }}
+    >
+      {workitem.startDate.slice(0, 7)}
+    </Typography>
+    <Box
+      sx={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        '& > :not(style)': {
+          m: 0.5,
+        },
+      }}
+    >
+      {workitem.tags.map((tag, index) => (
+        <MyGradientChip
+  key={index}
+  label={tag}
+  variant="outlined"
+  backgroundColor={theme.palette.background.paper}
+/>
+      ))}
+    </Box>
+  </Box>
+</Paper>
+
         </TimelineContent>
       </TimelineItem>
     );
