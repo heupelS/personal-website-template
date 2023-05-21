@@ -15,7 +15,6 @@ import Paper from "@mui/material/Paper";
 import Divider from "@mui/material/Divider";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { useTheme } from "@mui/material/styles";
-import Chip from '@mui/material/Chip';
 import MyGradientChip from "./GradientChip";
 
 export default function CustomizedTimeline({ theme }) {
@@ -40,8 +39,7 @@ export default function CustomizedTimeline({ theme }) {
           {isFirstItem ? (
             <TimelineConnector style={{ position: "relative" }}>
               <ArrowForwardIosIcon
-                style={{
-                  color: "inherit",
+                sx={{ 
                   position: "absolute",
                   right: "40%",
                   top: "5%",
@@ -197,6 +195,24 @@ export default function CustomizedTimeline({ theme }) {
           >
             {workitem.startDate.slice(0, 7)}
           </Typography>
+          <Box
+      sx={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        '& > :not(style)': {
+          m: 0.5,
+        },
+      }}
+    >
+      {workitem.tags.map((tag, index) => (
+        <MyGradientChip
+  key={index}
+  label={tag}
+  variant="outlined"
+  backgroundColor={theme.palette.background.paper}
+/>
+      ))}
+    </Box>
         </TimelineContent>
       </Paper>
     </TimelineItem>

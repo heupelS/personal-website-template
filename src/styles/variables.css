@@ -4,19 +4,7 @@ html {
   font-size: 16px;
 }
 
-#darkmode-button {
-  position: fixed;
-  bottom: 1vh;
-  left: 3vh;
-  z-index: 10000;
-}
 
-@media (max-width: 767px) {
-  #darkmode-button {
-    left: auto;
-    right: 3vh;
-  }
-}
 
 .material-icons, .material-icons-outlined {
   font-family: 'Material Icons';
