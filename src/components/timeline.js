@@ -195,6 +195,24 @@ export default function CustomizedTimeline({ theme }) {
           >
             {workitem.startDate.slice(0, 7)}
           </Typography>
+          <Box
+      sx={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        '& > :not(style)': {
+          m: 0.5,
+        },
+      }}
+    >
+      {workitem.tags.map((tag, index) => (
+        <MyGradientChip
+  key={index}
+  label={tag}
+  variant="outlined"
+  backgroundColor={theme.palette.background.paper}
+/>
+      ))}
+    </Box>
         </TimelineContent>
       </Paper>
     </TimelineItem>
