@@ -23,7 +23,7 @@ export default function ThemeToggler() {
         onClick={toggleColorMode}
         sx={{
           position: 'fixed',
-          bottom: theme.spacing(2),
+          bottom: theme.spacing(0),
           left: matches ? 'auto' : theme.spacing(2),
           right: matches ? theme.spacing(2) : 'auto',
           zIndex: 10000,
