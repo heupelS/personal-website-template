@@ -41,7 +41,7 @@
       "startDate": "2023-03-01",
       "website": "https://www.linkedin.com/company/deloitte/",
       "icon": "fas fa-briefcase",
-      "tags": ["Python", "R", "SQL", "Git", "Microsoft Office"]
+      "tags": ["Google Cloud Platform", "Docker", "Terraform", "Python", "Git"]
     },
     {
       "company": "growney",
@@ -51,7 +51,7 @@
       "startDate": "2021-11-30",
       "website": "https://www.linkedin.com/company/growney/",
       "icon": "fas fa-briefcase",
-      "tags": ["Python", "R", "SQL", "Git", "Microsoft Office"]
+      "tags": ["R", "Python", "SQL", "Git", "BPMN 2.0", "MS Office"]
     },
     {
       "company": "growney",
@@ -61,7 +61,7 @@
       "startDate": "2021-06-01",
       "website": "https://www.linkedin.com/company/growney/",
       "icon": "fas fa-briefcase",
-      "tags": ["Python", "R", "SQL", "Git", "Microsoft Office"]
+      "tags": ["Python", "R", "SQL", "Git", "Excel"]
     },
     {
       "company": "HALM Straws",
@@ -72,7 +72,7 @@
       "summary": "Marketing und CR-Management",
       "website": "https://www.linkedin.com/company/halmstraws/",
       "icon": "fas fa-briefcase",
-      "tags": ["Python", "R", "SQL", "Git", "Microsoft Office"]
+      "tags": ["Hubspot", "CRM", "Klaviyo", "MS Office"]
     }
   ],
   "volunteer": [],
