@@ -19,16 +19,16 @@
         "x_icon": "fab fa-linkedin"
       },
       {
-          "network": "Google",
-          "username": "simeon.heupel@gmail.com",
-          "url": "mailto:simeon.heupel@gmail.com",
-          "x_icon": "fab fa-google"
+        "network": "Google",
+        "username": "simeon.heupel@gmail.com",
+        "url": "mailto:simeon.heupel@gmail.com",
+        "x_icon": "fab fa-google"
       },
       {
-          "network": "GitHub",
-          "username": "heupelS",
-          "url": "https://github.com/heupelS",
-          "x_icon": "fab fa-github"
+        "network": "GitHub",
+        "username": "heupelS",
+        "url": "https://github.com/heupelS",
+        "x_icon": "fab fa-github"
       }
     ]
   },
@@ -41,7 +41,7 @@
       "startDate": "2023-03-01",
       "website": "https://www.linkedin.com/company/deloitte/",
       "icon": "fas fa-briefcase",
-      "tags": ["Google Cloud Platform", "Docker", "Terraform", "Python", "Git"]
+      "tags": ["Google Cloud", "Docker", "Terraform", "Python", "Git"]
     },
     {
       "company": "growney",

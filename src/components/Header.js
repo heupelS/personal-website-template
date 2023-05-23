@@ -81,17 +81,12 @@ export default function Header(props) {
                 underline: "none",
                 justifyContent: "center",
                 minWidth: 0,
-                textDecoration: "none",
-                underline: "none",
                 textAlign: "center",
               }}
               key={item.id}
             >
-              <ListItemButton
-              >
-                <ListItemText
-                  primary={item.name}
-                />
+              <ListItemButton>
+                <ListItemText primary={item.name} />
               </ListItemButton>
             </Link>
           </ListItem>
@@ -104,8 +99,11 @@ export default function Header(props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex" ,background: theme.palette.background.paper,}}>
-      <AppBar component="nav" sx={{ background: theme.palette.background.paper,}}>
+    <Box sx={{ display: "flex", background: theme.palette.background.paper }}>
+      <AppBar
+        component="nav"
+        sx={{ background: theme.palette.background.paper }}
+      >
         <Toolbar>
           <Link to="">
             <Box
@@ -125,8 +123,12 @@ export default function Header(props) {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ marginLeft: "auto", mr: 2, display: { sm: "none" },
-            textDecoration: "none", }}
+            sx={{
+              marginLeft: "auto",
+              mr: 2,
+              display: { sm: "none" },
+              textDecoration: "none",
+            }}
           >
             <MenuIcon />
           </IconButton>
@@ -147,14 +149,14 @@ export default function Header(props) {
             sx={{ display: { xs: "none", sm: "block" }, marginLeft: "auto" }}
           >
             {navItems.map((item) => (
-              <Link to={item.id} key={item.id}
-              style={{
-                textDecoration: "none",
-              }}>
-                <Button
-                >
-                  {item.name}
-                </Button>
+              <Link
+                to={item.id}
+                key={item.id}
+                style={{
+                  textDecoration: "none",
+                }}
+              >
+                <Button>{item.name}</Button>
               </Link>
             ))}
           </Box>
