@@ -39,7 +39,7 @@ export default function CustomizedTimeline({ theme }) {
           {isFirstItem ? (
             <TimelineConnector style={{ position: "relative" }}>
               <ArrowForwardIosIcon
-                sx={{ 
+                sx={{
                   position: "absolute",
                   right: "40%",
                   top: "5%",
@@ -68,159 +68,143 @@ export default function CustomizedTimeline({ theme }) {
           <TimelineConnector />
         </TimelineSeparator>
         <TimelineContent>
-        <Paper
-  sx={{ mx: 2, mt: 2, mb: 2, textAlign: "left", background: theme.palette.background.infobox}}
-  variant = "outlined"
-  onMouseEnter={() => setHoveredIndex(index)}
-  onMouseLeave={() => setHoveredIndex(null)}
->
-  <Box sx={{ marginLeft: "1vw" }}>
-    <Typography
-      variant="h6"
-      component="span"
-      sx={{
-        fontSize: {
-          xs: "1rem",
-          sm: "1.2rem",
-          md: "1.5rem",
-          lg: "2rem",
-        },
-      }}
-    >
-      {workitem.company}
-    </Typography>
-    <Typography>{workitem.position}</Typography>
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      sx={{
-        fontSize: {
-          xs: "1rem",
-          sm: "1.2rem",
-          md: "1.5rem",
-          lg: "2rem",
-        },
-      }}
-    >
-      {workitem.startDate.slice(0, 7)}
-    </Typography>
-    <Box
-      sx={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        '& > :not(style)': {
-          m: 0.5,
-        },
-      }}
-    >
-      {workitem.tags.map((tag, index) => (
-        <MyGradientChip
-  key={index}
-  label={tag}
-  variant="outlined"
-  backgroundColor={theme.palette.background.paper}
-/>
-      ))}
-    </Box>
-  </Box>
-</Paper>
-
+          <Paper
+            sx={{
+              mx: 2,
+              mt: 2,
+              mb: 2,
+              textAlign: "left",
+              background: theme.palette.background.infobox,
+            }}
+            variant="outlined"
+            onMouseEnter={() => setHoveredIndex(index)}
+            onMouseLeave={() => setHoveredIndex(null)}
+          >
+            <Box sx={{ marginLeft: "1vw", marginRight: "1vw" }}>
+              <Typography
+                variant="h6"
+                component="span"
+                gutterBottom
+                sx={{
+                  fontSize: {
+                    xs: "1rem",
+                    sm: "1.2rem",
+                    md: "1.5rem",
+                    lg: "2rem",
+                  },
+                }}
+              >
+                {workitem.company}
+              </Typography>
+              <Typography variant="body2" gutterBottom>
+                {workitem.position}
+              </Typography>
+              <Box
+                sx={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  "& > :not(style)": {
+                    m: 0.5,
+                  },
+                  mb: 1,
+                  mt: 1,
+                }}
+              >
+                {workitem.tags.map((tag, index) => (
+                  <MyGradientChip
+                    key={index}
+                    label={tag}
+                    variant="outlined"
+                    backgroundColor={theme.palette.background.paper}
+                  />
+                ))}
+              </Box>
+            </Box>
+          </Paper>
         </TimelineContent>
       </TimelineItem>
     );
   });
 
   const TimelineWorkItemsMobile = Resume.work.map((workitem, index) => {
-  const isFirstItem = index === 0;
+    const isFirstItem = index === 0;
 
-  return (
-    <TimelineItem key={workitem.company}>
-      <TimelineSeparator>
-        {isFirstItem ? (
-          <TimelineConnector style={{ position: "relative" }}>
-            <ArrowForwardIosIcon
-              style={{
-                color: "inherit",
-                position: "absolute",
-                right: "40%",
-                top: "5%",
-                transform: "translate(50%, -50%) rotate(-90deg)",
-              }}
-            />
-          </TimelineConnector>
-        ) : (
+    return (
+      <TimelineItem key={workitem.company}>
+        <TimelineSeparator>
+          {isFirstItem ? (
+            <TimelineConnector style={{ position: "relative" }}>
+              <ArrowForwardIosIcon
+                style={{
+                  color: "inherit",
+                  position: "absolute",
+                  right: "40%",
+                  top: "5%",
+                  transform: "translate(50%, -50%) rotate(-90deg)",
+                }}
+              />
+            </TimelineConnector>
+          ) : (
+            <TimelineConnector />
+          )}
+          <TimelineDot
+            variant="outlined"
+            sx={{
+              backgroundImage: theme.palette.background.gradient,
+              WebkitBackgroundClip: "text",
+              backgroundClip: "text",
+              color: "transparent",
+            }}
+          >
+            <i class={workitem.icon} style={{ color: "inherit" }}></i>
+          </TimelineDot>
           <TimelineConnector />
-        )}
-        <TimelineDot
-          variant="outlined"
-          sx={{
-            backgroundImage: theme.palette.background.gradient,
-                    WebkitBackgroundClip: "text",
-                    backgroundClip: "text",
-                    color: "transparent",
-          }}
-        >
-          <i class={workitem.icon} style={{ color: "inherit" }}></i>
-        </TimelineDot>
-        <TimelineConnector />
-      </TimelineSeparator>
-      <Paper sx={{ mx: 2, mt: 2, mb: 2, mr: 6 }}>
-        <TimelineContent>
-          <Typography
-            variant="h6"
-            component="span"
-            sx={{
-              fontSize: {
-                xs: "1rem",
-                sm: "1.2rem",
-                md: "1.5rem",
-                lg: "2rem",
-              },
-            }}
-          >
-            {workitem.company}
-          </Typography>
-          <Typography>{workitem.position}</Typography>
-          <Typography
-            variant="body2"
-            color="text.secondary"
-            sx={{
-              fontSize: {
-                xs: "1rem",
-                sm: "1.2rem",
-                md: "1.5rem",
-                lg: "2rem",
-              },
-            }}
-          >
-            {workitem.startDate.slice(0, 7)}
-          </Typography>
-          <Box
-      sx={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        '& > :not(style)': {
-          m: 0.5,
-        },
-      }}
-    >
-      {workitem.tags.map((tag, index) => (
-        <MyGradientChip
-  key={index}
-  label={tag}
-  variant="outlined"
-  backgroundColor={theme.palette.background.paper}
-/>
-      ))}
-    </Box>
-        </TimelineContent>
-      </Paper>
-    </TimelineItem>
-  );
-});
+        </TimelineSeparator>
+        <Paper sx={{ mx: 2, mt: 2, mb: 2, mr: 6 }}>
+          <TimelineContent>
+            <Typography
+              variant="h6"
+              component="span"
+              sx={{
+                fontSize: {
+                  xs: "1rem",
+                  sm: "1.2rem",
+                  md: "1.5rem",
+                  lg: "2rem",
+                },
+              }}
+            >
+              {workitem.company}
+            </Typography>
+            <Typography variant="body2" gutterBottom>
+              {workitem.position}
+            </Typography>
+            <Box
+              sx={{
+                display: "flex",
+                flexWrap: "wrap",
+                "& > :not(style)": {
+                  m: 0.5,
+                },
+              }}
+            >
+              {workitem.tags.map((tag, index) => (
+                <MyGradientChip
+                  key={index}
+                  label={tag}
+                  variant="outlined"
+                  backgroundColor={theme.palette.background.paper}
+                />
+              ))}
+            </Box>
+          </TimelineContent>
+        </Paper>
+      </TimelineItem>
+    );
+  });
 
   return (
-    <Box sx={{ mx: "auto", mt: 14 }}>
+    <Box sx={{ mx: "auto", mt: "18vh", width: "100vw" }}>
       <Typography variant="h3" gutterBottom sx={{ textAlign: "center" }}>
         Experience
       </Typography>
@@ -235,7 +219,9 @@ export default function CustomizedTimeline({ theme }) {
 
       <Grid container justifyContent="center">
         {!isMobile && (
-          <Timeline position="alternate">{TimelineWorkItemsWeb}</Timeline>
+          <Box sx={{ width: "60vw" }}>
+            <Timeline position="alternate">{TimelineWorkItemsWeb}</Timeline>
+          </Box>
         )}
         {isMobile && (
           <Timeline
