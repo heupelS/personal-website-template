@@ -5,11 +5,13 @@ import Zoom from "@mui/material/Zoom";
 import { useTheme } from "@mui/material/styles";
 import { useMediaQuery } from "@mui/material";
 import { ColorModeContext } from "./ThemeProvider";
+import { MetaThemeColor } from "./ThemeBackground";
 
 export default function ThemeToggler() {
   const theme = useTheme();
   const { toggleColorMode } = React.useContext(ColorModeContext);
   const matches = useMediaQuery("(max-width:767px)");
+
   return (
     <Tooltip
       title={
@@ -20,12 +22,12 @@ export default function ThemeToggler() {
     >
       <IconButton
         id="darkmode-button"
-        onClick={toggleColorMode}
+        onClick={(toggleColorMode, MetaThemeColor)}
         sx={{
-          position: 'fixed',
+          position: "fixed",
           bottom: theme.spacing(0),
-          left: matches ? 'auto' : theme.spacing(2),
-          right: matches ? theme.spacing(2) : 'auto',
+          left: matches ? "auto" : theme.spacing(2),
+          right: matches ? theme.spacing(2) : "auto",
           zIndex: 10000,
           width: "40px",
           height: "40px",
