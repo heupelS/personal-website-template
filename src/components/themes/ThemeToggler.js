@@ -13,10 +13,6 @@ export default function ThemeToggler() {
 
   const handleClick = () => {
     toggleColorMode();
-    const metaThemeColor = document.querySelector("meta[name=theme-color]");
-    if (metaThemeColor) {
-      metaThemeColor.setAttribute("content", theme.palette.background.default);
-    }
   };
 
   return (
