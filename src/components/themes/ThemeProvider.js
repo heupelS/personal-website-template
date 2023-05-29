@@ -31,7 +31,12 @@ export function ToggleColorMode({ children }) {
   React.useEffect(() => {
     const metaThemeColor = document.querySelector("meta[name=theme-color]");
     if (metaThemeColor) {
-      metaThemeColor.setAttribute("content", theme.palette.background.default);
+      metaThemeColor.setAttribute("content", theme.palette.text.primary);
+    } else {
+      const newMeta = document.createElement("meta");
+      newMeta.setAttribute("name", "theme-color");
+      newMeta.setAttribute("content", theme.palette.text.primary);
+      document.getElementsByTagName("head")[0].appendChild(newMeta);
     }
   }, [mode, theme]);
 
