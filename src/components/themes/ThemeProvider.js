@@ -1,6 +1,5 @@
 import * as React from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { MetaThemeColor } from "./ThemeBackground";
 
 import {
   ThemeProvider,
@@ -16,7 +15,6 @@ export const ColorModeContext = React.createContext({
 export function ToggleColorMode({ children }) {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
   const [mode, setMode] = React.useState(prefersDarkMode ? "dark" : "light");
-  MetaThemeColor();
   const colorMode = React.useMemo(
     () => ({
       toggleColorMode: () => {
@@ -29,6 +27,13 @@ export function ToggleColorMode({ children }) {
   const theme = React.useMemo(() =>
     responsiveFontSizes(createTheme(getDesignTokens(mode)), [mode])
   );
+
+  React.useEffect(() => {
+    const metaThemeColor = document.querySelector("meta[name=theme-color]");
+    if (metaThemeColor) {
+      metaThemeColor.setAttribute("content", theme.palette.background.default);
+    }
+  }, [mode, theme]);
 
   return (
     <ColorModeContext.Provider value={colorMode}>
