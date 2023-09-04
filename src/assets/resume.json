@@ -29,6 +29,12 @@
         "username": "heupelS",
         "url": "https://github.com/heupelS",
         "x_icon": "fab fa-github"
+      },
+      {
+        "network": "GitLab",
+        "username": "heupels",
+        "url": "https://git.tu-berlin.de/heupels",
+        "x_icon": "fab fa-gitlab"
       }
     ]
   },
