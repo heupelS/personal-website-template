@@ -46,23 +46,6 @@ export default function Header(props) {
         background: theme.palette.background.paper,
       }}
     >
-      <Link to="">
-        <Box
-          component="img"
-          variant="image"
-          sx={{
-            my: "auto",
-            width: "10vh",
-            height: "10vh",
-          }}
-          src={logo}
-          alt="logo"
-        />
-      </Link>
-      <Divider
-        variant="middle"
-        background={theme.palette.background.gradient}
-      />
       <List>
         {navItems.map((item) => (
           <ListItem
@@ -72,6 +55,7 @@ export default function Header(props) {
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
+              mt: 1,
             }}
           >
             <Link
@@ -111,8 +95,8 @@ export default function Header(props) {
               variant="image"
               sx={{
                 my: "auto",
-                width: "10vh",
-                height: "10vh",
+                width: "12vh",
+                height: "12vh",
                 display: { sm: "none" },
               }}
               src={logo}
@@ -137,8 +121,8 @@ export default function Header(props) {
               component="img"
               sx={{
                 display: { xs: "none", sm: "block" },
-                width: "10vh",
-                height: "10vh",
+                width: "12vh",
+                height: "12vh",
                 textDecoration: "none",
               }}
               src={logo}
