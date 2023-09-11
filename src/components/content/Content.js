@@ -31,7 +31,13 @@ export default function Content(theme) {
           </Typography>
           <Typography variant="h5" component="h1">
             <p>
-              an information systems student <br /> based in Berlin, Germany.
+              Information Systems Student <br /> in Berlin, Germany.
+            </p>
+          </Typography>
+          <Typography variant="h6" component="h1">
+            <p>
+              I enjoy creating programming projects and learning new
+              technologies.
             </p>
           </Typography>
         </Grid>

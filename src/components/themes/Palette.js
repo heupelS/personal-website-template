@@ -27,9 +27,9 @@ export const getDesignTokens = (mode) =>
               // palette values for dark mode
               primary: cyan,
               background: {
-                default: grey[900],
+                default: grey,
                 paper: "#141313",
-                infobox: "#212121",
+                infobox: "#141313",
                 gradient: `linear-gradient(to right, #2C3A8B 0%, 10.203412073490814%, #294495 20.406824146981627%, 30.183727034120736%, #1E5DAA 39.960629921259844%, 49.86876640419948%, #0E89D0 59.7769028871391%, 70.11154855643045%, #04A3E5 80.4461942257218%, 90.2230971128609%, #01ADEE 100%);`,
               },
               text: {
@@ -77,6 +77,7 @@ export const getDesignTokens = (mode) =>
                 backgroundClip: "text",
                 color: "transparent",
               },
+              textTransform: "none",
             }),
           },
         },
@@ -97,7 +98,7 @@ export const getDesignTokens = (mode) =>
               },
             }),
           },
-        },        
+        },
         MuiIconButton: {
           styleOverrides: {
             root: ({ theme }) => ({
@@ -108,13 +109,13 @@ export const getDesignTokens = (mode) =>
               color: "inherit",
               background: "inherit",
               "@media (hover: hover)": {
-              ":hover": {
-                backgroundImage: theme.palette.background.gradient,
-                WebkitBackgroundClip: "text",
-                backgroundClip: "text",
-                color: "transparent",
+                ":hover": {
+                  backgroundImage: theme.palette.background.gradient,
+                  WebkitBackgroundClip: "text",
+                  backgroundClip: "text",
+                  color: "transparent",
+                },
               },
-            },
             }),
           },
         },
@@ -130,12 +131,14 @@ export const getDesignTokens = (mode) =>
         },
         MuiDivider: {
           styleOverrides: {
-            root: ({ theme }) => ({ backgroundImage: theme.palette.background.gradient }),
+            root: ({ theme }) => ({
+              backgroundImage: theme.palette.background.gradient,
+            }),
           },
         },
         MuiTooltip: {
           styleOverrides: {
-            tooltip: ({ theme }) => ({              
+            tooltip: ({ theme }) => ({
               backgroundImage: theme.palette.background.gradient,
               WebkitBackgroundClip: "text",
               backgroundClip: "text",
