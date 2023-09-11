@@ -17,6 +17,7 @@ import { Outlet, Link } from "react-router-dom";
 const navItems = [
   { id: "", name: "Home" },
   { id: "Experience", name: "Experience" },
+  { id: "Projects", name: "Projects" },
 ];
 
 // future nav items

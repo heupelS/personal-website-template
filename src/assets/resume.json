@@ -1,11 +1,11 @@
 {
   "basics": {
     "name": "Simeon Heupel",
-    "label": "Intern - Deloitte",
+    "label": "Information Systems Student",
     "picture": "",
     "email": "simeon.heupel@gmail.com",
     "phone": "",
-    "website": "",
+    "website": "https://www.simeonheupel.com/",
     "summary": "",
     "location": {
       "countryCode": "DE",
@@ -47,7 +47,15 @@
       "startDate": "2023-03-01",
       "website": "https://www.linkedin.com/company/deloitte/",
       "icon": "fas fa-briefcase",
-      "tags": ["Google Cloud", "Docker", "Terraform", "Python", "Git"]
+      "tags": [
+        "Google Cloud",
+        "Docker",
+        "Terraform",
+        "Python",
+        "Java",
+        "Kafka",
+        "Git"
+      ]
     },
     {
       "company": "growney",
@@ -156,5 +164,25 @@
     }
   ],
   "interests": [],
-  "references": []
+  "references": [],
+  "projects": [
+    {
+      "name": "Personal Website",
+      "startDate": "2023-04-01",
+      "endDate": "",
+      "description": "Description...",
+      "highlights": [],
+      "url": "https://www.simeonheupel.com/",
+      "url_name": "simeonheupel.com"
+    },
+    {
+      "name": "Personal Website",
+      "startDate": "2023-04-01",
+      "endDate": "",
+      "description": "DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription",
+      "highlights": [],
+      "url": "https://www.simeonheupel.com/",
+      "url_name": "simeonheupel.com"
+    }
+  ]
 }
