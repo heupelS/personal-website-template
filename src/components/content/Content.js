@@ -3,6 +3,7 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import { useTheme } from "@mui/material/styles";
 import FlipImage from "../utils/FlipImage";
+import Resume from "../../assets/resume.json";
 
 export default function Content(theme) {
   theme = useTheme();
@@ -27,18 +28,16 @@ export default function Content(theme) {
         {/* Text */}
         <Grid item xs={12} sm={8}>
           <Typography variant="h2" component="h1">
-            Hi, I am Simeon
+            Hi, I am {Resume.basics.name}
           </Typography>
           <Typography variant="h5" component="h1">
             <p>
-              Information Systems Student <br /> in Berlin, Germany.
+              {Resume.basics.label} <br /> in {Resume.basics.location.city},{" "}
+              {Resume.basics.location.country}.
             </p>
           </Typography>
-          <Typography variant="h6" component="h1">
-            <p>
-              I enjoy creating programming projects and learning new
-              technologies.
-            </p>
+          <Typography variant="body1" component="h1">
+            <p>{Resume.basics.summary}</p>
           </Typography>
         </Grid>
         {/* Image */}
