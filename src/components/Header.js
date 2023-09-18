@@ -13,6 +13,8 @@ import Button from "@mui/material/Button";
 import logo from "../assets/logo_transparent.png";
 import { useTheme } from "@mui/material/styles";
 import { Outlet, Link } from "react-router-dom";
+import useScrollTrigger from "@mui/material/useScrollTrigger";
+import Slide from "@mui/material/Slide";
 
 const navItems = [
   { id: "", name: "Home" },
@@ -20,14 +22,24 @@ const navItems = [
   { id: "Projects", name: "Projects" },
 ];
 
-// future nav items
-/* const navItems = [
-  { id: "about-me", name: "About Me" },
-  { id: "skills", name: "Skills" },
-  { id: "experience", name: "Experience" },
-  { id: "interests", name: "Interests" },
-  { id: "projects", name: "Projects" },
-]; */
+function HideOnScroll(props) {
+  const { children, window } = props;
+  const trigger = useScrollTrigger({
+    target: window ? window() : undefined,
+  });
+  const slideDuration = 300;
+
+  return (
+    <Slide
+      appear={false}
+      direction="down"
+      in={!trigger}
+      timeout={slideDuration}
+    >
+      {children}
+    </Slide>
+  );
+}
 
 export default function Header(props) {
   const { window } = props;
@@ -84,68 +96,71 @@ export default function Header(props) {
 
   return (
     <Box sx={{ display: "flex", background: theme.palette.background.paper }}>
-      <AppBar
-        component="nav"
-        sx={{ background: theme.palette.background.paper }}
-      >
-        <Toolbar>
-          <Link to="">
-            <Box
-              component="img"
-              variant="image"
+      <HideOnScroll {...props}>
+        <AppBar
+          component="nav"
+          sx={{ background: theme.palette.background.paper }}
+          position="fixed"
+        >
+          <Toolbar>
+            <Link to="">
+              <Box
+                component="img"
+                variant="image"
+                sx={{
+                  my: "auto",
+                  width: "12vh",
+                  height: "12vh",
+                  display: { sm: "none" },
+                }}
+                src={logo}
+                alt="logo"
+              />
+            </Link>
+            <IconButton
+              aria-label="open drawer"
+              edge="start"
+              onClick={handleDrawerToggle}
               sx={{
-                my: "auto",
-                width: "12vh",
-                height: "12vh",
+                marginLeft: "auto",
+                mr: 2,
                 display: { sm: "none" },
-              }}
-              src={logo}
-              alt="logo"
-            />
-          </Link>
-          <IconButton
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{
-              marginLeft: "auto",
-              mr: 2,
-              display: { sm: "none" },
-              textDecoration: "none",
-            }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Link to="">
-            <Box
-              component="img"
-              sx={{
-                display: { xs: "none", sm: "block" },
-                width: "12vh",
-                height: "12vh",
                 textDecoration: "none",
               }}
-              src={logo}
-              alt="logo"
-            />
-          </Link>
-          <Box
-            sx={{ display: { xs: "none", sm: "block" }, marginLeft: "auto" }}
-          >
-            {navItems.map((item) => (
-              <Link
-                to={item.id}
-                key={item.id}
-                style={{
+            >
+              <MenuIcon />
+            </IconButton>
+            <Link to="">
+              <Box
+                component="img"
+                sx={{
+                  display: { xs: "none", sm: "block" },
+                  width: "12vh",
+                  height: "12vh",
                   textDecoration: "none",
                 }}
-              >
-                <Button>{item.name}</Button>
-              </Link>
-            ))}
-          </Box>
-        </Toolbar>
-      </AppBar>
+                src={logo}
+                alt="logo"
+              />
+            </Link>
+            <Box
+              sx={{ display: { xs: "none", sm: "block" }, marginLeft: "auto" }}
+            >
+              {navItems.map((item) => (
+                <Link
+                  to={item.id}
+                  key={item.id}
+                  style={{
+                    textDecoration: "none",
+                  }}
+                >
+                  <Button>{item.name}</Button>
+                </Link>
+              ))}
+            </Box>
+          </Toolbar>
+        </AppBar>
+      </HideOnScroll>
       <Box component="nav">
         <Drawer
           container={container}
