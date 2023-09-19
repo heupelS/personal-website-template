@@ -10,6 +10,11 @@ export default function ThemeToggler() {
   const theme = useTheme();
   const { toggleColorMode } = React.useContext(ColorModeContext);
   const matches = useMediaQuery("(max-width:767px)");
+
+  const handleClick = () => {
+    toggleColorMode();
+  };
+
   return (
     <Tooltip
       title={
@@ -20,12 +25,12 @@ export default function ThemeToggler() {
     >
       <IconButton
         id="darkmode-button"
-        onClick={toggleColorMode}
+        onClick={handleClick}
         sx={{
-          position: 'fixed',
+          position: "fixed",
           bottom: theme.spacing(0),
-          left: matches ? 'auto' : theme.spacing(2),
-          right: matches ? theme.spacing(2) : 'auto',
+          left: matches ? "auto" : theme.spacing(2),
+          right: matches ? theme.spacing(2) : "auto",
           zIndex: 10000,
           width: "40px",
           height: "40px",

@@ -28,6 +28,18 @@ export function ToggleColorMode({ children }) {
     responsiveFontSizes(createTheme(getDesignTokens(mode)), [mode])
   );
 
+  React.useEffect(() => {
+    const metaThemeColor = document.querySelector("meta[name=theme-color]");
+    if (metaThemeColor) {
+      metaThemeColor.setAttribute("content", theme.palette.background.default);
+    } else {
+      const newMeta = document.createElement("meta");
+      newMeta.setAttribute("name", "theme-color");
+      newMeta.setAttribute("content", theme.palette.background.default);
+      document.getElementsByTagName("head")[0].appendChild(newMeta);
+    }
+  }, [mode, theme]);
+
   return (
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>{children}</ThemeProvider>
