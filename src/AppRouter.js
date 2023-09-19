@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Experience from "./pages/Experience";
 import Interface from "./pages/Interface";
 import Projects from "./pages/Projects";
+import ProjectDetail from "./pages/ProjectDetail";
 
 function AppRouter() {
   return (
@@ -15,6 +16,15 @@ function AppRouter() {
           <Route path="/Projects" element={<Projects />} />
           {/* <Route path="*" element={<NoPage />} /> */}
         </Route>
+        <Route
+          path="/Projects/:projectName/*"
+          element={
+            <Interface>
+              {" "}
+              <ProjectDetail />
+            </Interface>
+          }
+        />
         {/*         <Route path="/about" component={AboutPage} />
         <Route path="/contact" component={ContactPage} /> */}
       </Routes>
