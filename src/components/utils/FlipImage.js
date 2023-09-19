@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import avatar from "../../assets/AiAvatar.jpg";
-import professional_picture from "../../assets/professional_picture.jpg";
+import vacation_picture from "../../assets/vacation_picture.jpg";
 
 export default function FlipImage() {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -40,7 +40,7 @@ export default function FlipImage() {
         <img src={avatar} alt="avatar front" style={imgStyles} />
       </div>
       <div style={{ ...imgStyles, ...backStyles }}>
-        <img src={professional_picture} alt="avatar back" style={imgStyles} />
+        <img src={vacation_picture} alt="avatar back" style={imgStyles} />
       </div>
     </div>
   );

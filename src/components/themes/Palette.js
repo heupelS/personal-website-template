@@ -66,7 +66,8 @@ export const getDesignTokens = (mode) =>
         body2: {
           textOverflow: "ellipsis",
           wordWrap: "break-word",
-          marginBottom: "2vh",
+          marginBottom: "3vh",
+          fontWeight: 10,
         },
       },
       components: {
