@@ -1,14 +1,16 @@
 {
   "basics": {
     "name": "Simeon Heupel",
-    "label": "Intern - Deloitte",
+    "label": "Information Systems Student",
     "picture": "",
     "email": "simeon.heupel@gmail.com",
     "phone": "",
-    "website": "",
-    "summary": "",
+    "website": "https://www.simeonheupel.com/",
+    "summary": "I enjoy creating programming projects and learning new technologies.",
     "location": {
       "countryCode": "DE",
+      "city": "Berlin",
+      "country": "Germany",
       "address": ""
     },
     "profiles": [
@@ -29,6 +31,12 @@
         "username": "heupelS",
         "url": "https://github.com/heupelS",
         "x_icon": "fab fa-github"
+      },
+      {
+        "network": "GitLab",
+        "username": "heupels",
+        "url": "https://git.tu-berlin.de/heupels",
+        "x_icon": "fab fa-gitlab"
       }
     ]
   },
@@ -41,7 +49,15 @@
       "startDate": "2023-03-01",
       "website": "https://www.linkedin.com/company/deloitte/",
       "icon": "fas fa-briefcase",
-      "tags": ["Google Cloud", "Docker", "Terraform", "Python", "Git"]
+      "tags": [
+        "Google Cloud",
+        "Docker",
+        "Terraform",
+        "Python",
+        "Java",
+        "Kafka",
+        "Git"
+      ]
     },
     {
       "company": "growney",
@@ -150,5 +166,61 @@
     }
   ],
   "interests": [],
-  "references": []
+  "references": [],
+  "projects": [
+    {
+      "name": "Personal Website",
+      "startDate": "2023-04-01",
+      "endDate": "",
+      "description": "My personal website project is a dynamic and visually appealing template designed to help others create their own online presence effortlessly. This project served as my learning journey into React, Material UI, and front-end development in general.",
+      "category": "Web Development",
+      "year": "2023",
+      "timeline": "1 month",
+      "challenge": "Design a personal website to be easily reusable and customizable for others, so that they can create their own online presence effortlessly based on the Resume.json protocoll.",
+      "_01_understand": "In order to develop a personal website, I needed to identify the best technologies to use. I decided to use React and Material UI, as they are both widely used and have a large community.",
+      "context": "Explore the context of web development with React and Material UI to build modern websites.",
+      "problem_definition": "Creating a website to display my programming projects and skills in a visually appealing way and also make it optimized for mobile usage.",
+      "_02_implementation": "The website template has been meticulously crafted using React, a popular JavaScript library for building user interfaces. This choice of technology enables the creation of a highly modular and efficient web application. To enhance the website's aesthetics and user experience, Material UI, a comprehensive design framework, has been seamlessly integrated. Material UI provides an extensive collection of pre-designed components, simplifying the maintenance of a consistent design language. Moreover, the template follows the resume.json protocol, ensuring that users can effortlessly input their personal information, work experience, education, and more. This structured data format empowers users to customize the website swiftly, showcasing their unique skills and experiences. Customizability is a key feature, allowing users to tailor colors, fonts, and layout to align with their personal branding. The website template prioritizes responsive design, ensuring a seamless browsing experience across various devices, from desktops to mobile phones. Additionally, this project has been made open source, welcoming contributions from the development community",
+      "process": "The process was an iterative one, where I would first create a basic website and then add more features to it. I also tried to learn the best practices for creating a website with react along the way. When i got inspiration from other websites i tried rebuilding some features of them.",
+      "planning": "I started by creating a basic website with React and Material UI. Then I added more features to it, such as a Home form and a Experience section. I also tried to learn the best practices for creating a website with react along the way. When i got inspiration from other websites i tried rebuilding some features of them.",
+      "requirements": "The requirements for this project were to create a website that is visually appealing and optimized for mobile. Make every custom areas on this website be based on the resume.json protocoll.",
+      "technologies_used": "React, Material UI, JavaScript, HTML, CSS and SCSS",
+      "_03_evaluation": "The evaluation phase for this project involves assessing its performance and user feedback. After the initial implementation, I will conduct thorough testing to ensure the website functions smoothly across various devices and browsers. User feedback will be collected to identify any usability issues or additional features that could enhance the user experience. Furthermore, I will analyze the project's success in meeting its primary objectives, such as providing a visually appealing and mobile-optimized website based on the resume.json protocol. This evaluation will guide any necessary refinements or improvements to the website template.",
+      "_04_deployment": "This website was deployed with vercel. It is integrated with the GitHub repository, which makes it easy to have a CI/CD structure. The website is newly deployed on every push to the main branch. The domain is managed by strato.",
+      "highlights": [],
+      "url": "https://www.simeonheupel.com/",
+      "url_name": "simeonheupel.com",
+      "logo": "assets/logo_transparent.png",
+      "picture": "assets/Project_pictures/website-home.jpg",
+      "picture_alt_text": "Simeon Heupel Logo",
+      "routername": "Projects/personal-website"
+    },
+    {
+      "name": "Wordle Solver",
+      "startDate": "2022-03-01",
+      "endDate": "",
+      "description": "Introducing the Wordle Solver Project, a blend of Python and C++ expertise, solving the complex game of Wordle. I've developed two unique algorithms, rigorously tested through simulations, ensuring their precision and efficiency. Whether you're a Wordle enthusiast or a tech-savvy developer, the project showcases the intersection of technology and wordplay without using any AI.",
+      "category": "Algorithms",
+      "year": "2022",
+      "timeline": "1 month",
+      "challenge": "Implement the Wordle game and Wordle Solver, providing players with an interactive Wordle gaming experience and the ability to solve Wordle puzzles effectively.",
+      "_01_understand": "To create the Wordle game and Wordle Solver, the rules and mechanics needed to understand of the Wordle game. Various approaches to solving Wordle puzzles were explored, including the Expected Information Gain Approach and Relative Probability Approach. I also implemented a C++ version of the solver for potential performance enhancements.",
+      "context": "The context of this project is in the realm of word games and problem-solving. It involves both gameplay and algorithmic challenges.",
+      "problem_definition": "The problem is twofold: First, to create an interactive Wordle game where players can guess a secret word within a limited number of attempts and receive feedback. Second, to develop a Wordle Solver that can suggest the best next guess for solving Wordle puzzles effectively.",
+      "_02_implementation": "The implementation of this project involves the creation of a Wordle game that allows human players to interactively guess the secret word and receive feedback. Additionally, a Wordle Solver has been developed with two distinct approaches: the Expected Information Gain Approach and the Relative Probability Approach. The solver can suggest the best next guess based on these approaches. A C++ version of the solver has also been implemented to explore potential performance improvements. The project uses Python and C++ as the primary technologies.",
+      "process": "The development process was iterative, involving the creation of the Wordle game and Wordle Solver components. The game logic, user interaction, and feedback mechanism was implemented. For the solver, two approaches for finding the secret word effectively were developed. Continuous testing and refinement were carried out to ensure the solutions were accurate and functional.",
+      "planning": "The project planning included understanding the rules of Wordle, choosing the appropriate algorithms for solving Wordle puzzles, and designing a user-friendly interface for the Wordle game. I also planned the development of the C++ version of the solver for potential performance enhancements.",
+      "requirements": "The requirements for this project were to create a playable Wordle game with a limited number of attempts and provide feedback for each guess. The Wordle Solver should be able to suggest the best next guess based on the selected approach.",
+      "technologies_used": "Python, C++ and Git",
+      "_03_evaluation": "The evaluation phase involves testing the Wordle game and Wordle Solver for functionality and accuracy. In order to test the performance of both approaches, a simulation with 10000 iterations of playing the wordle game was performed. The C++ implementation was benchmarked in order to compare the speed of the algorithms in different programming languages. The project's success is measured by its ability to provide an engaging Wordle gaming experience and an effective Wordle Solver.",
+      "_04_deployment": "Deployment for this project involves hosting the Wordle game and solver on a suitable platform. The game can be run in a console environment, while the solver can be used through a command-line interface. Continuous integration and deployment (CI/CD) practices may be applied to ensure the latest code changes are available to users.",
+      "highlights": [],
+      "url": "https://github.com/heupelS/wordle-solver",
+      "url_name": "github.com/heupelS/wordle-solver",
+      "logo": "assets/Project_pictures/wordle-logo.png",
+      "picture": "assets/Project_pictures/Wordle.jpg",
+      "picture_alt_text": "Wordle Solver Project Picture",
+      "routername": "Projects/wordle-solver"
+    }
+  ]
 }

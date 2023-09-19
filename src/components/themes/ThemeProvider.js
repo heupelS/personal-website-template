@@ -24,9 +24,7 @@ export function ToggleColorMode({ children }) {
     []
   );
 
-  const theme = React.useMemo(() =>
-    responsiveFontSizes(createTheme(getDesignTokens(mode)), [mode])
-  );
+  const theme = responsiveFontSizes(createTheme(getDesignTokens(mode)), [mode]);
 
   React.useEffect(() => {
     const metaThemeColor = document.querySelector("meta[name=theme-color]");
