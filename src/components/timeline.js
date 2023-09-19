@@ -26,7 +26,7 @@ export default function CustomizedTimeline({ theme }) {
     const isFirstItem = index === 0;
 
     return (
-      <TimelineItem key={workitem.company}>
+      <TimelineItem key={`${workitem.company}_${index}`}>
         <TimelineOppositeContent
           sx={{ m: "auto 0" }}
           align="right"
@@ -63,7 +63,7 @@ export default function CustomizedTimeline({ theme }) {
                 : {}
             }
           >
-            <i class={workitem.icon}></i>
+            <i className={workitem.icon}></i>
           </TimelineDot>
           <TimelineConnector />
         </TimelineSeparator>
@@ -82,7 +82,7 @@ export default function CustomizedTimeline({ theme }) {
           >
             <Box sx={{ marginLeft: "1vw", marginRight: "1vw" }}>
               <Typography
-                variant="h6"
+                variant="h4"
                 component="span"
                 gutterBottom
                 sx={{
@@ -111,12 +111,7 @@ export default function CustomizedTimeline({ theme }) {
                 }}
               >
                 {workitem.tags.map((tag, index) => (
-                  <MyGradientChip
-                    key={index}
-                    label={tag}
-                    variant="outlined"
-                    backgroundColor={theme.palette.background.paper}
-                  />
+                  <MyGradientChip key={index} label={tag} variant="outlined" />
                 ))}
               </Box>
             </Box>
@@ -130,7 +125,7 @@ export default function CustomizedTimeline({ theme }) {
     const isFirstItem = index === 0;
 
     return (
-      <TimelineItem key={workitem.company}>
+      <TimelineItem key={`${workitem.company}_${index}`}>
         <TimelineSeparator>
           {isFirstItem ? (
             <TimelineConnector style={{ position: "relative" }}>
@@ -156,14 +151,14 @@ export default function CustomizedTimeline({ theme }) {
               color: "transparent",
             }}
           >
-            <i class={workitem.icon} style={{ color: "inherit" }}></i>
+            <i className={workitem.icon} style={{ color: "inherit" }}></i>
           </TimelineDot>
           <TimelineConnector />
         </TimelineSeparator>
         <Paper sx={{ mx: 2, mt: 2, mb: 2, mr: 6 }}>
           <TimelineContent>
             <Typography
-              variant="h6"
+              variant="h4"
               component="span"
               sx={{
                 fontSize: {
@@ -189,12 +184,7 @@ export default function CustomizedTimeline({ theme }) {
               }}
             >
               {workitem.tags.map((tag, index) => (
-                <MyGradientChip
-                  key={index}
-                  label={tag}
-                  variant="outlined"
-                  backgroundColor={theme.palette.background.paper}
-                />
+                <MyGradientChip key={index} label={tag} variant="outlined" />
               ))}
             </Box>
           </TimelineContent>
@@ -204,7 +194,7 @@ export default function CustomizedTimeline({ theme }) {
   });
 
   return (
-    <Box sx={{ mx: "auto", mt: "18vh", width: "100vw" }}>
+    <Box sx={{ mx: "auto", mt: "18vh", width: "100vw", height: "100vh" }}>
       <Typography variant="h3" gutterBottom sx={{ textAlign: "center" }}>
         Experience
       </Typography>
