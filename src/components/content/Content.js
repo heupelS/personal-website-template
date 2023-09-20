@@ -8,13 +8,13 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 
 export default function Content(theme) {
   theme = useTheme();
-  const ismobile = useMediaQuery("(max-width:600px)");
+  const ismobile = useMediaQuery("(max-width:1180px)");
   return (
     <Container
       maxWidth="xl"
       sx={{
         width: "80%",
-        marginTop: ismobile ? "100px" : "auto",
+        marginTop: ismobile ? "10vh" : "auto",
         marginBottom: "auto",
         position: "absolute",
         top: "50%",
