@@ -14,7 +14,7 @@ export default function Content(theme) {
       maxWidth="xl"
       sx={{
         width: "80%",
-        marginTop: ismobile ? "18vh" : "auto",
+        marginTop: ismobile ? "100px" : "auto",
         marginBottom: "auto",
         position: "absolute",
         top: "50%",
