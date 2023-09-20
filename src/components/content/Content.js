@@ -4,15 +4,17 @@ import Grid from "@mui/material/Grid";
 import { useTheme } from "@mui/material/styles";
 import FlipImage from "../utils/FlipImage";
 import Resume from "../../assets/resume.json";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 export default function Content(theme) {
   theme = useTheme();
+  const ismobile = useMediaQuery("(max-width:1180px)");
   return (
     <Container
       maxWidth="xl"
       sx={{
         width: "80%",
-        marginTop: "auto",
+        marginTop: ismobile ? "10vh" : "auto",
         marginBottom: "auto",
         position: "absolute",
         top: "50%",
@@ -31,17 +33,13 @@ export default function Content(theme) {
             Hi, I am {Resume.basics.name}
           </Typography>
           <Typography variant="h5" component="h1">
-            <p>
-              {Resume.basics.label} <br /> in {Resume.basics.location.city},{" "}
-              {Resume.basics.location.country}.
-            </p>
+            {Resume.basics.label} <br /> in {Resume.basics.location.city},{" "}
+            {Resume.basics.location.country}.
           </Typography>
           <Typography variant="body1" component="h1">
             <p>{Resume.basics.summary}</p>
           </Typography>
         </Grid>
-        {/* Image */}
-
         <Grid item xs={12} sm={4}>
           <FlipImage />
         </Grid>

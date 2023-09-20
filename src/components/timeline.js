@@ -15,7 +15,7 @@ import Paper from "@mui/material/Paper";
 import Divider from "@mui/material/Divider";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { useTheme } from "@mui/material/styles";
-import MyGradientChip from "./GradientChip";
+import MyGradientChip from "./utils/GradientChip";
 
 export default function CustomizedTimeline({ theme }) {
   theme = useTheme();
@@ -195,7 +195,7 @@ export default function CustomizedTimeline({ theme }) {
 
   return (
     <Box sx={{ mx: "auto", mt: "18vh", width: "100vw", height: "100vh" }}>
-      <Typography variant="h3" gutterBottom sx={{ textAlign: "center" }}>
+      <Typography variant="h2" gutterBottom sx={{ textAlign: "center" }}>
         Experience
       </Typography>
       <Divider
