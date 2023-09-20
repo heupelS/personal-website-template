@@ -15,7 +15,7 @@ import Paper from "@mui/material/Paper";
 import Divider from "@mui/material/Divider";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { useTheme } from "@mui/material/styles";
-import MyGradientChip from "./GradientChip";
+import MyGradientChip from "./utils/GradientChip";
 
 export default function CustomizedTimeline({ theme }) {
   theme = useTheme();
