@@ -7,10 +7,9 @@ export default function Home() {
   document.title = resume.basics.name;
   return (
     <>
-      <Container sx={{ height: "100vh" }}>
+      <Container>
         <Content></Content>
       </Container>
-      {/* <SlidingLayers></SlidingLayers> */}
     </>
   );
 }
