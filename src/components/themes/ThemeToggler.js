@@ -37,9 +37,9 @@ export default function ThemeToggler() {
         }}
       >
         {theme.palette.mode === "dark" ? (
-          <i className="material-icons-outlined">dark_mode</i>
+          <span className="material-icons-outlined">dark_mode</span>
         ) : (
-          <i className="material-icons-outlined">light_mode</i>
+          <span className="material-icons-outlined">light_mode</span>
         )}
       </IconButton>
     </Tooltip>
