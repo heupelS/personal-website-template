@@ -195,7 +195,7 @@ export default function CustomizedTimeline({ theme }) {
 
   return (
     <Box sx={{ mx: "auto", mt: "18vh", width: "100vw", height: "100vh" }}>
-      <Typography variant="h3" gutterBottom sx={{ textAlign: "center" }}>
+      <Typography variant="h2" gutterBottom sx={{ textAlign: "center" }}>
         Experience
       </Typography>
       <Divider
