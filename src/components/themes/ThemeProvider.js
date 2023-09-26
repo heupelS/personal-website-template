@@ -36,11 +36,14 @@ export function ToggleColorMode({ children }) {
 
   const theme = responsiveFontSizes(createTheme(getDesignTokens(mode)), [mode]);
 
-  function setBodyBackgroundColor() {
-    document.body.style.backgroundColor = theme.palette.background.default; // Change these values as per your theme.
+  function updateThemeColor() {
+    const metaThemeColor = document.querySelector("meta[name=theme-color]");
+    if (metaThemeColor) {
+      metaThemeColor.setAttribute("content", theme.palette.background.default);
+    }
   }
 
-  setBodyBackgroundColor();
+  updateThemeColor();
 
   return (
     <ColorModeContext.Provider value={colorMode}>
