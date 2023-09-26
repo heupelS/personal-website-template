@@ -18,7 +18,7 @@ This project is designed to serve as a template for creating your own personal w
 
 I want to thank [@JoHoop](https://github.com/JoHoop), [@bchiang7](https://github.com/bchiang7), [Arlen Mccluskey](https://www.arlenmccluskey.com/) and [Charles Bruyerre](https://itssharl.ee/) for the inspiration.
 
-Now you can follow these steps to get use the template for your own personal website:
+Now you can follow these steps to use the template for your own personal website:
 
 ## Installation
 
