@@ -15,7 +15,6 @@ export const ColorModeContext = React.createContext({
 export function ToggleColorMode({ children }) {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
   const [mode, setMode] = React.useState(() => {
-    // Check local storage for the selected color mode
     const storedMode = localStorage.getItem("colorMode");
     return storedMode ? storedMode : prefersDarkMode ? "dark" : "light";
   });
@@ -25,8 +24,8 @@ export function ToggleColorMode({ children }) {
       toggleColorMode: () => {
         setMode((prevMode) => {
           const newMode = prevMode === "light" ? "dark" : "light";
-          // Store the selected color mode in local storage
           localStorage.setItem("colorMode", newMode);
+          updateThemeColor(newMode);
           return newMode;
         });
       },
@@ -36,14 +35,16 @@ export function ToggleColorMode({ children }) {
 
   const theme = responsiveFontSizes(createTheme(getDesignTokens(mode)), [mode]);
 
-  function updateThemeColor() {
-    const metaThemeColor = document.querySelector("meta[name=theme-color]");
-    if (metaThemeColor) {
-      metaThemeColor.setAttribute("content", theme.palette.background.default);
+  const updateThemeColor = React.useCallback(() => {
+    const themeColor = document.querySelector("meta[name=theme-color]");
+    if (themeColor) {
+      themeColor.setAttribute("content", theme.palette.background.default);
     }
-  }
+  }, [theme]);
 
-  updateThemeColor();
+  React.useEffect(() => {
+    updateThemeColor();
+  }, [updateThemeColor]);
 
   return (
     <ColorModeContext.Provider value={colorMode}>
