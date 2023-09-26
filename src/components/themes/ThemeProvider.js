@@ -36,17 +36,14 @@ export function ToggleColorMode({ children }) {
 
   const theme = responsiveFontSizes(createTheme(getDesignTokens(mode)), [mode]);
 
-  React.useEffect(() => {
+  function updateThemeColor() {
     const metaThemeColor = document.querySelector("meta[name=theme-color]");
     if (metaThemeColor) {
       metaThemeColor.setAttribute("content", theme.palette.background.default);
-    } else {
-      const newMeta = document.createElement("meta");
-      newMeta.setAttribute("name", "theme-color");
-      newMeta.setAttribute("content", theme.palette.background.default);
-      document.getElementsByTagName("head")[0].appendChild(newMeta);
     }
-  }, [theme]);
+  }
+
+  updateThemeColor();
 
   return (
     <ColorModeContext.Provider value={colorMode}>
