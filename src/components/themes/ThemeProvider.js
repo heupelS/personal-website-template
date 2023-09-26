@@ -14,31 +14,33 @@ export const ColorModeContext = React.createContext({
 
 export function ToggleColorMode({ children }) {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
-  const [mode, setMode] = React.useState(prefersDarkMode ? "dark" : "light");
+  const [mode, setMode] = React.useState(() => {
+    // Check local storage for the selected color mode
+    const storedMode = localStorage.getItem("colorMode");
+    return storedMode ? storedMode : prefersDarkMode ? "dark" : "light";
+  });
+
   const colorMode = React.useMemo(
     () => ({
       toggleColorMode: () => {
-        setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
+        setMode((prevMode) => {
+          const newMode = prevMode === "light" ? "dark" : "light";
+          // Store the selected color mode in local storage
+          localStorage.setItem("colorMode", newMode);
+          return newMode;
+        });
       },
     }),
     []
   );
 
-  const theme = React.useMemo(() =>
-    responsiveFontSizes(createTheme(getDesignTokens(mode)), [mode])
-  );
+  const theme = responsiveFontSizes(createTheme(getDesignTokens(mode)), [mode]);
 
-  React.useEffect(() => {
-    const metaThemeColor = document.querySelector("meta[name=theme-color]");
-    if (metaThemeColor) {
-      metaThemeColor.setAttribute("content", theme.palette.background.default);
-    } else {
-      const newMeta = document.createElement("meta");
-      newMeta.setAttribute("name", "theme-color");
-      newMeta.setAttribute("content", theme.palette.background.default);
-      document.getElementsByTagName("head")[0].appendChild(newMeta);
-    }
-  }, [mode, theme]);
+  function setBodyBackgroundColor() {
+    document.body.style.backgroundColor = theme.palette.background.default; // Change these values as per your theme.
+  }
+
+  setBodyBackgroundColor();
 
   return (
     <ColorModeContext.Provider value={colorMode}>
