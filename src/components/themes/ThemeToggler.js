@@ -13,6 +13,15 @@ export default function ThemeToggler() {
 
   const handleClick = () => {
     toggleColorMode();
+    const metaThemeColor = document.querySelector("meta[name=theme-color]");
+    if (metaThemeColor) {
+      metaThemeColor.setAttribute("content", theme.palette.background.default);
+    } else {
+      const newMetaTag = document.createElement("meta");
+      newMetaTag.setAttribute("name", "theme-color");
+      newMetaTag.setAttribute("content", theme.palette.background.default);
+      document.getElementsByTagName("head")[0].appendChild(newMetaTag);
+    }
   };
 
   return (
