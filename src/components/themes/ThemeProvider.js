@@ -14,21 +14,11 @@ export const ColorModeContext = React.createContext({
 
 export function ToggleColorMode({ children }) {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
-  const [mode, setMode] = React.useState(() => {
-    // Check local storage for the selected color mode
-    const storedMode = localStorage.getItem("colorMode");
-    return storedMode ? storedMode : prefersDarkMode ? "dark" : "light";
-  });
-
+  const [mode, setMode] = React.useState(prefersDarkMode ? "dark" : "light");
   const colorMode = React.useMemo(
     () => ({
       toggleColorMode: () => {
-        setMode((prevMode) => {
-          const newMode = prevMode === "light" ? "dark" : "light";
-          // Store the selected color mode in local storage
-          localStorage.setItem("colorMode", newMode);
-          return newMode;
-        });
+        setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
       },
     }),
     []
@@ -46,7 +36,7 @@ export function ToggleColorMode({ children }) {
       newMeta.setAttribute("content", theme.palette.background.default);
       document.getElementsByTagName("head")[0].appendChild(newMeta);
     }
-  }, [theme]);
+  }, [mode, theme]);
 
   return (
     <ColorModeContext.Provider value={colorMode}>
