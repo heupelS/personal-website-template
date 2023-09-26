@@ -34,5 +34,6 @@
     }
   ],
   "start_url": ".",
-  "display": "standalone"
+  "display": "standalone",
+  "background_color": "#7ae4fa"
 }
