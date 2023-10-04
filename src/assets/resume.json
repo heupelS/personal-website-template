@@ -189,7 +189,7 @@
       "_04_deployment": "This website was deployed with vercel. It is integrated with the GitHub repository, which makes it easy to have a CI/CD structure. The website is newly deployed on every push to the main branch. The domain is managed by strato.",
       "highlights": [],
       "url": "https://github.com/heupelS/personal-website-template",
-      "url_name": "simeonheupel.com",
+      "url_name": "github.com/heupelS/personal-website-template",
       "logo": "assets/logo_transparent.png",
       "picture": "assets/Project_pictures/website-home.jpg",
       "picture_alt_text": "Simeon Heupel Logo",
