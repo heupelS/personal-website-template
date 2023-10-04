@@ -188,7 +188,7 @@
       "_03_evaluation": "The evaluation phase for this project involves assessing its performance and user feedback. After the initial implementation, I will conduct thorough testing to ensure the website functions smoothly across various devices and browsers. User feedback will be collected to identify any usability issues or additional features that could enhance the user experience. Furthermore, I will analyze the project's success in meeting its primary objectives, such as providing a visually appealing and mobile-optimized website based on the resume.json protocol. This evaluation will guide any necessary refinements or improvements to the website template.",
       "_04_deployment": "This website was deployed with vercel. It is integrated with the GitHub repository, which makes it easy to have a CI/CD structure. The website is newly deployed on every push to the main branch. The domain is managed by strato.",
       "highlights": [],
-      "url": "https://www.simeonheupel.com/",
+      "url": "https://github.com/heupelS/personal-website-template",
       "url_name": "simeonheupel.com",
       "logo": "assets/logo_transparent.png",
       "picture": "assets/Project_pictures/website-home.jpg",
