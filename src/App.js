@@ -4,8 +4,10 @@ import "./styles/variables.css";
 import { ToggleColorMode } from "./components/themes/ThemeProvider";
 import AppRouter from "./AppRouter";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { inject } from "@vercel/analytics";
 
 function App() {
+  inject();
   return (
     <ToggleColorMode>
       <CssBaseline enableColorScheme />
